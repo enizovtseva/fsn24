@@ -1,0 +1,275 @@
+extends pug/base-lk
+
+append vars
+	- html.classList.push('page-lk')
+
+block content
+
+	section
+		.container
+			nav(aria-label="breadcrumb")
+				ol.breadcrumb
+					li.breadcrumb-item.active(aria-current="page")
+						+svg("user")(width="27" height="27")
+						| Мой профиль
+					li.breadcrumb-item.active(aria-current="page") Пользователи
+					
+	section.pt-20.pt-xl-0
+		.container
+			.row
+				.col-lg-4.col-sm-12
+					.row
+						.col-lg-12.col-md-6
+							.card.user-nav.mb-30
+								.card-body.pt-20.pr-10.pb-20.pl-10.pt-xl-25.pr-xl-30.pb-xl-15.pl-xl-30
+									ul.nav.flex-column
+										li.nav-item.mb-10
+											a.nav-link(href="/lk-personal-account.html") Мой профиль
+										li.nav-item.mb-10
+											a.nav-link.active(href="/lk-main-user.html") Пользователи
+										li.nav-item
+											a.nav-link(href="/lk-collateral-objects.html") Объекты залога
+										li.nav-item
+											a.nav-link(href="/lk-notifications.html") Уведомления 
+												span.badge.badge-pill.badge-danger 3
+										li.nav-item
+											a.nav-link(href="/lk-my-offers.html") Мои оферты
+										li.nav-item
+											a.nav-link(href="/lk-participation-in-offers.html") Участие в офертах
+												span.badge.badge-pill.badge-danger 1
+										li.nav-item
+											a.nav-link(href="/lk-counter-offers.html") Встречные предложения
+												span.badge.badge-pill.badge-danger 1
+										li.nav-item
+											a.nav-link(href="/lk-search-ads.html") Поиск объявлений
+								ul.list-group
+									li.list-group-item.border-right-0.border-left-0.pt-25.pb-30
+										a.btn.btn-secondary.w-100(href="/lk-personal-account-edit.html")
+											+svg("settings")(width="21" height="21")
+											| Настройки
+											
+				.col-lg-8.col-sm-12
+					.card.bg-primary.page-lk-alert
+						.card-body.pr-15.pl-15.pr-md-20.pt-25.pb-25.pl-md-25
+							.row.align-items-center
+								.col-sm-7.col-md-9
+									span Основной пользователь: Иванов Иван Иванович
+								.col-sm-5.col-md-3.d-flex.justify-content-sm-end.mt-30.mt-sm-0
+									.alert-circle(data-toggle="tooltip" data-placement="bottom" title='<div class="alert-circle"></div> Данные заполнены не полностью...')
+										+svg("alert-circle-red")
+									a.edit(href="#")
+										+svg("edit")
+									a.trash(href="#")
+										+svg("trash")
+					.card.page-lk-users
+						.card-header.d-block.border-0.pr-15.pl-15.pr-md-20.pl-md-25
+							.row.align-items-center
+								.col-sm-7.col-md-9
+									.card-title.m-0 Объекты Ивана Ивановича
+								.col-sm-5.col-md-3.d-flex.justify-content-sm-end.mt-30.mt-sm-0
+									a.add(href="#" data-toggle="tooltip" data-placement="bottom" title='Добавить')
+										+svg("plus-circle")
+									a.refresh(href="#")
+										+svg("refresh")
+									a.update(href="#")
+										+svg("rotate")
+						.card-body.pt-10.pr-20.pl-20
+							.page-lk-users-filter.mb-30
+								a(data-toggle="collapse" href="#usersFilter" role="button" aria-expanded="false" aria-controls="collapseExample") Фильтр
+									+svg("arrow-down-outline")(width="13" height="7")
+								.row.align-items-center.collapse#usersFilter
+									.col-md-3.mb-20.mb-md-0
+										.row.align-items-center
+											.col-sm-4.col-md-12
+												.mb-20.mb-sm-0.mb-md-20
+													b Контактное лицо
+											.col-sm-8.col-md-12
+												input.form-control(type="text" placeholder="Ввести")
+									.col-md-3.mb-20.mb-md-0
+										.row.align-items-center
+											.col-sm-4.col-md-12
+												.mb-20.mb-sm-0.mb-md-20
+													b Телефон
+											.col-sm-8.col-md-12
+												input.form-control(type="text" placeholder="Ввести")
+									.col-md-3.mb-20.mb-md-0
+										.row.align-items-center
+											.col-sm-4.col-md-12
+												.mb-20.mb-sm-0.mb-md-20
+													b E-mail
+											.col-sm-8.col-md-12
+												input.form-control(type="text" placeholder="Ввести")
+									.col-md-3.d-flex.justify-content-end
+							.page-lk-users-list
+								.page-lk-users-item
+									.row.align-items-center
+										.col-md-3.mb-30.mb-md-0
+											.row.align-items-center
+												.col-6.col-sm-4.d-md-none
+													b Контактное лицо
+												.col-6.col-sm-8.col-md-12.text-right.text-md-left
+													span ИП Мишина Ирина Петровна
+										.col-md-3.mb-30.mb-md-0
+											.row.align-items-center
+												.col-6.col-sm-4.d-md-none
+													b Телефон
+												.col-6.col-sm-8.col-md-12.text-right.text-md-left
+													span +7(921) 365 32 33
+										.col-md-3.mb-35.mb-md-0
+											.row.align-items-center
+												.col-6.col-sm-4.d-md-none
+													b E-mail
+												.col-6.col-sm-8.col-md-12.text-right.text-md-left
+													span vs.4.123@mail.ru
+										.col-md-3
+											.row.align-items-center
+												.col-6.col-sm-4.d-md-none
+													b Действия
+												.col-6.col-sm-8.col-md-12.d-flex.justify-content-end
+													a.edit.disabled(href="#" data-toggle="tooltip" data-placement="bottom" title='<div class="alert-circle"></div> Вы не можете редактировать данные ...')
+														+svg("edit")
+													a.trash.disabled(href="#" data-toggle="tooltip" data-placement="bottom" title='<div class="alert-circle"></div> Вы не можете удалить данные ...')
+														+svg("trash")
+								.page-lk-users-item
+									.row.align-items-center
+										.col-md-3.mb-30.mb-md-0
+											.row.align-items-center
+												.col-6.col-sm-4.d-md-none
+													b Контактное лицо
+												.col-6.col-sm-8.col-md-12.text-right.text-md-left
+													span ООО «Балт Строй»
+										.col-md-3.mb-30.mb-md-0
+											.row.align-items-center
+												.col-6.col-sm-4.d-md-none
+													b Телефон
+												.col-6.col-sm-8.col-md-12.text-right.text-md-left
+													span +7(921) 365 32 33
+													br
+													span +7(921) 365 31 35
+										.col-md-3.mb-35.mb-md-0
+											.row.align-items-center
+												.col-6.col-sm-4.d-md-none
+													b E-mail
+												.col-6.col-sm-8.col-md-12.text-right.text-md-left
+													span 2005@mail.ru
+										.col-md-3
+											.row.align-items-center
+												.col-6.col-sm-4.d-md-none
+													b Действия
+												.col-6.col-sm-8.col-md-12.d-flex.justify-content-end
+													.alert-circle(data-toggle="tooltip" data-placement="bottom" title='<div class="alert-circle"></div> Данные заполнены не полностью...')
+														+svg("alert-circle-red")
+													a.edit.disabled(href="#" data-toggle="tooltip" data-placement="bottom" title='<div class="alert-circle"></div> Вы не можете редактировать данные ...')
+														+svg("edit")
+													a.trash.disabled(href="#" data-toggle="tooltip" data-placement="bottom" title='<div class="alert-circle"></div> Вы не можете удалить данные ...')
+														+svg("trash")
+								.page-lk-users-item
+									.row.align-items-center
+										.col-md-3.mb-30.mb-md-0
+											.row.align-items-center
+												.col-6.col-sm-4.d-md-none
+													b Контактное лицо
+												.col-6.col-sm-8.col-md-12.text-right.text-md-left
+													span Воробьев Артем Викторович
+										.col-md-3.mb-30.mb-md-0
+											.row.align-items-center
+												.col-6.col-sm-4.d-md-none
+													b Телефон
+												.col-6.col-sm-8.col-md-12.text-right.text-md-left
+													span +7(921) 365 32 33
+										.col-md-3.mb-35.mb-md-0
+											.row.align-items-center
+												.col-6.col-sm-4.d-md-none
+													b E-mail
+												.col-6.col-sm-8.col-md-12.text-right.text-md-left
+													span vs.4.123@mail.ru
+										.col-md-3
+											.row.align-items-center
+												.col-6.col-sm-4.d-md-none
+													b Действия
+												.col-6.col-sm-8.col-md-12.d-flex.justify-content-end
+													a.edit.disabled(href="#" data-toggle="tooltip" data-placement="bottom" title='<div class="alert-circle"></div> Вы не можете редактировать данные ...')
+														+svg("edit")
+													a.trash.disabled(href="#" data-toggle="tooltip" data-placement="bottom" title='<div class="alert-circle"></div> Вы не можете удалить данные ...')
+														+svg("trash")
+								.page-lk-users-item
+									.row.align-items-center
+										.col-md-3.mb-30.mb-md-0
+											.row.align-items-center
+												.col-6.col-sm-4.d-md-none
+													b Контактное лицо
+												.col-6.col-sm-8.col-md-12.text-right.text-md-left
+													span ИП Иванов Иван Иванович
+										.col-md-3.mb-30.mb-md-0
+											.row.align-items-center
+												.col-6.col-sm-4.d-md-none
+													b Телефон
+												.col-6.col-sm-8.col-md-12.text-right.text-md-left
+													span +7(921) 365 32 33
+													br
+													span +7(921) 365 31 35
+										.col-md-3.mb-35.mb-md-0
+											.row.align-items-center
+												.col-6.col-sm-4.d-md-none
+													b E-mail
+												.col-6.col-sm-8.col-md-12.text-right.text-md-left
+													span 2005@mail.ru
+										.col-md-3
+											.row.align-items-center
+												.col-6.col-sm-4.d-md-none
+													b Действия
+												.col-6.col-sm-8.col-md-12.d-flex.justify-content-end
+													.alert-circle(data-toggle="tooltip" data-placement="bottom" title='<div class="alert-circle"></div> Данные заполнены не полностью...')
+														+svg("alert-circle-red")
+													a.edit(href="#" data-toggle="tooltip" data-placement="bottom" title='Редактировать данные')
+														+svg("edit")
+													a.trash(href="#" data-toggle="tooltip" data-placement="bottom" title='Удалить данные')
+														+svg("trash")
+								.page-lk-users-item
+									.row.align-items-center
+										.col-md-3.mb-30.mb-md-0
+											.row.align-items-center
+												.col-6.col-sm-4.d-md-none
+													b Контактное лицо
+												.col-6.col-sm-8.col-md-12.text-right.text-md-left
+													span ООО «Балт»
+										.col-md-3.mb-30.mb-md-0
+											.row.align-items-center
+												.col-6.col-sm-4.d-md-none
+													b Телефон
+												.col-6.col-sm-8.col-md-12.text-right.text-md-left
+													span +7(921) 365 32 33
+										.col-md-3.mb-35.mb-md-0
+											.row.align-items-center
+												.col-6.col-sm-4.d-md-none
+													b E-mail
+												.col-6.col-sm-8.col-md-12.text-right.text-md-left
+													span vs.4.123@mail.ru
+										.col-md-3
+											.row.align-items-center
+												.col-6.col-sm-4.d-md-none
+													b Действия
+												.col-6.col-sm-8.col-md-12.d-flex.justify-content-end
+													a.edit.disabled(href="#" data-toggle="tooltip" data-placement="bottom" title='<div class="alert-circle"></div> Вы не можете редактировать данные ...')
+														+svg("edit")
+													a.trash.disabled(href="#" data-toggle="tooltip" data-placement="bottom" title='<div class="alert-circle"></div> Вы не можете удалить данные ...')
+														+svg("trash")
+												
+							.page-lk-users-navigation
+								.pt-10.pb-10
+									span Строки на странице:
+								.dropdown.pt-10.pb-10
+									button.btn.btn-link.dropdown-toggle#dropdownPagination(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 5
+									.dropdown-menu(aria-labelledby="dropdownPagination")
+										button.dropdown-item(type="button") 5
+										button.dropdown-item(type="button") 10
+										button.dropdown-item(type="button") 20
+										button.dropdown-item(type="button") 50
+								.d-inline-flex.align-items-center.pt-10.pb-10
+									span 1-10 из 10
+									.swiper-buttons.d-flex
+										a.swiper-button.prev(href="#")
+											+svg("arrow-left-small")
+										a.swiper-button.next(href="#")
+											+svg("arrow-right-small")
+

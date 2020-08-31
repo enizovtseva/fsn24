@@ -1,0 +1,188 @@
+extends pug/base-lk
+
+append vars
+	- html.classList.push('page-lk')
+
+block content
+
+	section
+		.container
+			nav(aria-label="breadcrumb")
+				ol.breadcrumb
+					li.breadcrumb-item(aria-current="page")
+						+svg("user")(width="27" height="27")
+						| Мой профиль
+					li.breadcrumb-item(aria-current="page") Лицевой счет
+					li.breadcrumb-item(aria-current="page") История операций
+					
+	section.pt-20.pt-xl-0
+		.container
+
+			.card.bg-primary.page-lk-alert.mb-50.d-none.d-lg-block
+				.card-body.pr-15.pl-15.pr-md-20.pt-25.pb-25.pl-md-25
+					.row.align-items-center
+						.col-sm-7.col-md-9
+							span Основной пользователь: Иванов Иван Иванович
+						.col-sm-5.col-md-3.d-flex.justify-content-sm-end.mt-30.mt-sm-0
+							span Баланс: #[b 1 000 руб.]
+								
+			.card.page-lk-history
+
+				.card-header.d-block.pr-15.pl-15.pr-md-20.pl-md-25.pb-10
+					.row.align-items-center
+						.col-sm-7.col-md-9
+							.card-title.m-0 Операции на счёте
+						.col-sm-5.col-md-3.d-flex.align-items-center.justify-content-sm-end.mt-30.mt-sm-0
+							a.refresh(href="#")
+								+svg("refresh")
+							a.update(href="#")
+								+svg("rotate")
+							a.save(href="#")
+								+svg("save")(width="27" height="28")
+
+				.card-body.pt-10.pr-20.pl-20
+					.page-lk-users-filter.mb-30
+						a(data-toggle="collapse" href="#usersFilter" role="button" aria-expanded="false" aria-controls="collapseExample") Фильтр
+							+svg("arrow-down-outline")(width="13" height="7")
+						.row.align-items-center.collapse#usersFilter
+							.col-md-3.mb-20.mb-md-0
+								.row.align-items-center
+									.col-sm-4.col-md-12
+										.mb-20.mb-sm-0.mb-md-20
+											b Наименование
+									.col-sm-8.col-md-12
+										input.form-control(type="text" placeholder="Ввести")
+							.col-md-3.mb-20.mb-md-0
+								.row.align-items-center
+									.col-sm-4.col-md-12
+										.mb-20.mb-sm-0.mb-md-20
+											b Дата и время
+									.col-sm-8.col-md-12
+										input.form-control(type="text" placeholder="Ввести")
+							.col-md-3.mb-20.mb-md-0
+								.row.align-items-center
+									.col-sm-4.col-md-12
+										.mb-20.mb-sm-0.mb-md-20
+											b Сумма
+									.col-sm-8.col-md-12
+										input.form-control(type="text" placeholder="Ввести")
+							.col-md-3.mb-20.mb-md-0
+								.row.align-items-center
+									.col-sm-4.col-md-12
+										.mb-20.mb-sm-0.mb-md-20
+											b Остаток 
+									.col-sm-8.col-md-12
+										input.form-control(type="text" placeholder="Ввести")
+					.page-lk-users-list
+						.page-lk-users-item
+							.row.align-items-center
+								.col-md-3.mb-30.mb-md-0
+									.row.align-items-center
+										.col-6.col-sm-4.d-md-none
+											b Зачисление
+										.col-6.col-sm-8.col-md-12.text-right.text-md-left
+											span Зачисление
+								.col-md-3.mb-30.mb-md-0
+									.row.align-items-center
+										.col-6.col-sm-4.d-md-none
+											b Время и дата
+										.col-6.col-sm-8.col-md-12.text-right.text-md-left
+											span от 20/04/2020
+											span.ml-10 10:29
+								.col-md-3.mb-35.mb-md-0
+									.row.align-items-center
+										.col-6.col-sm-4.d-md-none
+											b Остаток
+										.col-6.col-sm-8.col-md-12.text-right.text-md-left
+											b 10 568 руб.
+								.col-md-3
+									.row.align-items-center
+										.col-6.col-sm-4.d-md-none
+											b Действия
+										.col-6.col-sm-8.col-md-12.d-flex.justify-content-end
+											b 10 568 руб.
+											a.more(data-toggle="collapse" href="#objectMore-1" role="button" aria-expanded="false" aria-controls="objectMore-1")
+												+svg("arrow-down-outline")(data-toggle="tooltip" data-placement="bottom" title='Еще')
+							.page-lk-users-object.collapse#objectMore-1
+								p Зачисление
+						.page-lk-users-item
+							.row.align-items-center
+								.col-md-3.mb-30.mb-md-0
+									.row.align-items-center
+										.col-6.col-sm-4.d-md-none
+											b Зачисление
+										.col-6.col-sm-8.col-md-12.text-right.text-md-left
+											span Зачисление
+								.col-md-3.mb-30.mb-md-0
+									.row.align-items-center
+										.col-6.col-sm-4.d-md-none
+											b Время и дата
+										.col-6.col-sm-8.col-md-12.text-right.text-md-left
+											span от 20/04/2020
+											span.ml-10 10:29
+								.col-md-3.mb-35.mb-md-0
+									.row.align-items-center
+										.col-6.col-sm-4.d-md-none
+											b Остаток
+										.col-6.col-sm-8.col-md-12.text-right.text-md-left
+											b 10 568 руб.
+								.col-md-3
+									.row.align-items-center
+										.col-6.col-sm-4.d-md-none
+											b Действия
+										.col-6.col-sm-8.col-md-12.d-flex.justify-content-end
+											b 10 568 руб.
+											a.more(data-toggle="collapse" href="#objectMore-1" role="button" aria-expanded="false" aria-controls="objectMore-1")
+												+svg("arrow-down-outline")(data-toggle="tooltip" data-placement="bottom" title='Еще')
+							.page-lk-users-object.collapse#objectMore-1
+								p Зачисление
+						.page-lk-users-item
+							.row.align-items-center
+								.col-md-3.mb-30.mb-md-0
+									.row.align-items-center
+										.col-6.col-sm-4.d-md-none
+											b Зачисление
+										.col-6.col-sm-8.col-md-12.text-right.text-md-left
+											span Зачисление
+								.col-md-3.mb-30.mb-md-0
+									.row.align-items-center
+										.col-6.col-sm-4.d-md-none
+											b Время и дата
+										.col-6.col-sm-8.col-md-12.text-right.text-md-left
+											span от 20/04/2020
+											span.ml-10 10:29
+								.col-md-3.mb-35.mb-md-0
+									.row.align-items-center
+										.col-6.col-sm-4.d-md-none
+											b Остаток
+										.col-6.col-sm-8.col-md-12.text-right.text-md-left
+											b 10 568 руб.
+								.col-md-3
+									.row.align-items-center
+										.col-6.col-sm-4.d-md-none
+											b Действия
+										.col-6.col-sm-8.col-md-12.d-flex.justify-content-end
+											b 10 568 руб.
+											a.more(data-toggle="collapse" href="#objectMore-1" role="button" aria-expanded="false" aria-controls="objectMore-1")
+												+svg("arrow-down-outline")(data-toggle="tooltip" data-placement="bottom" title='Еще')
+							.page-lk-users-object.collapse#objectMore-1
+								p Зачисление
+										
+					.page-lk-users-navigation
+						.pt-10.pb-10
+							span Строки на странице:
+						.dropdown.pt-10.pb-10
+							button.btn.btn-link.dropdown-toggle#dropdownPagination(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 5
+							.dropdown-menu(aria-labelledby="dropdownPagination")
+								button.dropdown-item(type="button") 5
+								button.dropdown-item(type="button") 10
+								button.dropdown-item(type="button") 20
+								button.dropdown-item(type="button") 50
+						.d-inline-flex.align-items-center.pt-10.pb-10
+							span 1-10 из 10
+							.swiper-buttons.d-flex
+								a.swiper-button.prev(href="#")
+									+svg("arrow-left-small")
+								a.swiper-button.next(href="#")
+									+svg("arrow-right-small")
+

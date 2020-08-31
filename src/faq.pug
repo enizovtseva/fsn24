@@ -1,0 +1,135 @@
+extends pug/base
+
+append vars
+	- html.classList.push('page-index')
+
+block content
+	
+	section.faq
+		.container
+			h2 Вопросы и ответы
+
+			.card.card-form.searh
+				.card-body
+					form.searh-form
+						input.form-control(type="text")
+						a.btn.btn-danger.text-uppercase(href="#") Найти ответ
+
+			ul.nav.nav-tabs#faqTab(role="tablist")
+				li.nav-item(role="presentation")
+					a.nav-link.active#investors-tab(data-toggle="tab" href="#investors" role="tab" aria-controls="investors" aria-selected="true") Инвесторам
+				li.nav-item(role="presentation")
+					a.nav-link#borrowers-tab(data-toggle="tab" href="#borrowers" role="tab" aria-controls="borrowers" aria-selected="false") Заемщикам
+					
+			.tab-content#faqTabContent
+				.tab-pane.fade.show.active#investors(role="tabpanel" aria-labelledby="investors-tab")
+					.row
+						.col-lg-5
+							.row
+								.col-lg-12.col-md-6
+									.card.shadow-none.faq-nav.mb-30
+										.card-body
+											h3 Категории вопросов
+											p Выберите нужный Вам раздел 
+											ul.nav.flex-column
+												li.nav-item
+													a.nav-link(href="#") Статусы и уровни
+												li.nav-item
+													a.nav-link(href="") Регистрация
+												li.nav-item
+													a.nav-link(href="") Совершение оферты
+												li.nav-item
+													a.nav-link(href="") Безопасность сделок
+												li.nav-item
+													a.nav-link(href="") Оплата и Финансы
+													
+								.col-lg-12.col-md-6
+									.card.shadow-none.mb-30
+										.card-body
+											h3.text-center(data-toggle="collapse" href="#faqForm" role="button" aria-expanded="false" aria-controls="faqForm") Не нашли ответ на свой вопрос?
+												+svg("arrow-down-outline")(width="13" height="7")
+											.text-center.d-none.d-sm-block
+												p Опишите вашу проблему. Вопрос будет опубликован вместе с ответом после того, как его проверит администратор.
+												p Укажите свое имя и контакты, если хотите, чтобы с вами связались лично. Ваш E-mail не будет опубликован на сайте.
+											form.form.needs-validation.collapse#faqForm(novalidate)
+												.form-group
+													label.col-form-label Категория вопроса
+													select.selectpicker.w-100(placeholder="Категория вопроса")
+														option(selected) Категория вопроса
+														option Категория
+														option Категория
+														option Категория
+														option Категория
+														option Категория
+												.form-group
+													label.col-form-label Тема вопроса
+													select.selectpicker.w-100(placeholder="Введите тему вопроса")
+														option(selected) Введите тему вопроса
+														option Тема
+														option Тема
+														option Тема
+														option Тема
+														option Тема
+												.form-group
+													label.col-form-label Ваше имя
+													input.form-control(type="text" placeholder="Введите свое имя" )
+												.form-group
+													label.col-form-label E-mail
+													input.form-control(type="email" placeholder="Введите e-mail")
+												.form-group
+													textarea.form-control(placeholder="Ввести текст...")
+
+						.col-lg-7
+							h1 Последние вопросы
+							.faq-item
+								.faq-item-title Статусы
+								.faq-item-date Вопрос задан 20/04/2020
+								p Что нужно сделать в первую очередь чтобы стать посредником в купле-продаже коммерческой или проммышленной недвижимости?
+								a.faq-item-more(href="/faq-answer.html") Читать ответ
+									+svg("arrow-down-outline")(width="13" height="7")
+							.faq-item
+								.faq-item-title Статусы и уровни
+								.faq-item-date Вопрос задан 20/04/2020
+								p Что нужно сделать в первую очередь чтобы стать посредником в купле-продаже коммерческой или проммышленной недвижимости?
+								a.faq-item-more(href="/faq-answer.html") Читать ответ
+									+svg("arrow-down-outline")(width="13" height="7")
+							.faq-item
+								.faq-item-title Регистрация
+								.faq-item-date Вопрос задан 20/04/2020
+								p Что нужно сделать в первую очередь чтобы стать посредником в купле-продаже коммерческой или проммышленной недвижимости?
+								a.faq-item-more(href="/faq-answer.html") Читать ответ
+									+svg("arrow-down-outline")(width="13" height="7")
+							.faq-item
+								.faq-item-title Купля - продажа
+								.faq-item-date Вопрос задан 20/04/2020
+								p Что нужно сделать в первую очередь чтобы стать посредником в купле-продаже коммерческой или проммышленной недвижимости?
+								a.faq-item-more(href="/faq-answer.html") Читать ответ
+									+svg("arrow-down-outline")(width="13" height="7")
+							.faq-item
+								.faq-item-title Купля - продажа
+								.faq-item-date Вопрос задан 20/04/2020
+								p Что нужно сделать в первую очередь чтобы стать посредником в купле-продаже коммерческой или проммышленной недвижимости?
+								a.faq-item-more(href="/faq-answer.html") Читать ответ
+									+svg("arrow-down-outline")(width="13" height="7")
+									
+							.navigation
+								.pt-10.pb-10
+									span Строки на странице:
+								.dropdown.pt-10.pb-10
+									button.btn.btn-link.dropdown-toggle#dropdownPagination(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 5
+									.dropdown-menu(aria-labelledby="dropdownPagination")
+										button.dropdown-item(type="button") 5
+										button.dropdown-item(type="button") 10
+										button.dropdown-item(type="button") 20
+										button.dropdown-item(type="button") 50
+								.d-inline-flex.align-items-center.pt-10.pb-10
+									span 1-10 из 10
+									.swiper-buttons.d-flex
+										a.swiper-button.prev(href="#")
+											+svg("arrow-left-small")
+										a.swiper-button.next(href="#")
+											+svg("arrow-right-small")
+
+				.tab-pane.fade#borrowers(role="tabpanel" aria-labelledby="borrowers-tab") 2
+
+			

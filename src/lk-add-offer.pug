@@ -1,0 +1,569 @@
+extends pug/base-lk
+
+append vars
+	- html.classList.push('page-lk')
+
+block content
+
+	section
+		.container
+			nav(aria-label="breadcrumb")
+				ol.breadcrumb
+					li.breadcrumb-item
+						a(href="/lk-personal-account.html")
+							+svg("user")(width="27" height="27")
+							| Мой профиль
+					li.breadcrumb-item
+						a(href="/lk-main-user.html") Оферты
+					li.breadcrumb-item(aria-current="page") Добавить  оферту
+	
+	section.pt-20.pt-xl-0
+		.container
+			.row
+				.col-lg-4.col-sm-12
+					.card.user-nav.mb-30
+						.card-body.pt-20.pr-10.pb-20.pl-10.pt-xl-25.pr-xl-30.pb-xl-15.pl-xl-30
+							ul.nav.flex-column
+								li.nav-item.mb-10
+									a.nav-link(href="/lk-personal-account.html") Мой профиль
+								li.nav-item.mb-10
+									a.nav-link.active(href="/lk-main-user.html") Пользователи
+								li.nav-item
+									a.nav-link(href="/lk-collateral-objects.html") Объекты залога
+								li.nav-item
+									a.nav-link(href="/lk-notifications.html") Уведомления 
+										span.badge.badge-pill.badge-danger 3
+								li.nav-item
+									a.nav-link(href="/lk-my-offers.html") Мои оферты
+								li.nav-item
+									a.nav-link(href="/lk-participation-in-offers.html") Участие в офертах
+										span.badge.badge-pill.badge-danger 1
+								li.nav-item
+									a.nav-link(href="/lk-counter-offers.html") Встречные предложения
+										span.badge.badge-pill.badge-danger 1
+								li.nav-item
+									a.nav-link(href="/lk-search-ads.html") Поиск объявлений
+						ul.list-group
+							li.list-group-item.border-right-0.border-left-0.pt-25.pb-30
+								a.btn.btn-secondary.w-100(href="/lk-personal-account-edit.html")
+									+svg("settings")(width="21" height="21")
+									| Настройки
+											
+				.col-lg-8.col-sm-12
+					.card.user-profile.user-profile-add
+						.card-header
+							h3.card-title.m-0 Новая Оферта
+						.card-body
+							form.form.needs-validation(novalidate)
+								.form-group.row.align-items-center.mb-30(data-toggle="collapse" data-target="#objectMore-1" role="button" aria-expanded="true" aria-controls="objectMore-1")
+									.col-xl-8.col-md-10.col-11.pr-0
+										h5.m-0 Заемщик 
+									.col-1.text-right.pl-0
+										a.more
+											+svg("chevron-down")
+
+								.collapse.show.mb-45#objectMore-1
+									.form-group.mb-20.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Получатель д/с*
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control(type="text" placeholder="Начните вводить..." value="" required)
+									.form-group.mb-20.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Фамилия
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control(type="text" placeholder="Заполняется автоматич..." value="" disabled)
+									.form-group.mb-20.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Имя
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control(type="text" placeholder="Заполняется автоматич..." value="" disabled)
+									.form-group.mb-20.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Отчество
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control(type="text" placeholder="Заполняется автоматич..." value="" disabled)
+									.form-group.mb-20.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Документ
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control(type="text" placeholder="Заполняется автоматич..." value="" disabled)
+
+								.form-group.row.align-items-center.mb-30(data-toggle="collapse" data-target="#objectMore-2" role="button" aria-expanded="true" aria-controls="objectMore-2")
+									.col-xl-8.col-md-10.col-11.pr-0
+										h5.m-0 Объекты залога
+									.col-1.text-right.pl-0
+										a.more
+											+svg("chevron-down")
+
+								.collapse.show.mb-45#objectMore-2
+									.form-group
+										ul.nav.nav-tabs#addTab(role="tablist")
+											li.nav-item(role="presentation")
+												a.nav-link.active#object-1-tab(data-toggle="tab" href="#object-1" role="tab" aria-controls="object-1" aria-selected="true") Объект 1
+											li.nav-item(role="presentation")
+												a.nav-link#object-2-tab(data-toggle="tab" href="#object-2" role="tab" aria-controls="object-2" aria-selected="false") +
+
+									.tab-content#addTabContent
+										.tab-pane.fade.show.active#object-1(role="tabpanel" aria-labelledby="object-1-tab")
+											.form-group
+												b Собственники
+											.form-group.mb-20.row.align-items-start
+												label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Собственник 1*
+												.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+													select.selectpicker(placeholder="Выбрать...")
+														option(selected) Выбрать...
+														option Выбрать...
+											.form-group.mb-20.row.align-items-start
+												label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Доля владения*
+												.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+													input.form-control(type="text" placeholder="" value="100 %")
+											hr.mt-20.mb-30
+											.form-group
+												a.user-profile-add-link(href="#")
+													svg.mr-10(width="18" height="18" viewBox="0 0 18 18" fill="none")
+														path(d="M8.99609 16.8477C13.4144 16.8477 16.9961 13.2659 16.9961 8.84766C16.9961 4.42938 13.4144 0.847656 8.99609 0.847656C4.57782 0.847656 0.996094 4.42938 0.996094 8.84766C0.996094 13.2659 4.57782 16.8477 8.99609 16.8477Z")
+														path(d="M8.99609 5.64844V12.0484")
+														path(d="M5.79688 8.84766H12.1969")
+													| Еще собственник
+
+											.form-group.mt-50.row.align-items-center.mb-30(data-toggle="collapse" data-target="#objectMore-3" role="button" aria-expanded="true" aria-controls="objectMore-3")
+												.col-xl-8.col-md-10.col-11.pr-0
+													b Выбор или создание объекта залога
+												.col-1.text-right.pl-0
+													a.more
+														+svg("chevron-down")
+
+											.collapse.show.mb-45#objectMore-3
+												.form-group.mb-20.row.align-items-start
+													label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Объект*
+													.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+														select.selectpicker(placeholder="Новый")
+															option(selected) Новый
+															option Новый
+												.form-group.mb-20.row.align-items-start
+													label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Тип объекта
+													.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+														select.selectpicker(placeholder="Выбрать...")
+															option(selected) Выбрать...
+															option Выбрать...
+												.form-group.mb-35
+													label.col-form-label.font-weight-bolder Поиск объекта
+													.col-xl-9.col-md-11.col-sm-12.pr-md-0.pl-xl-0
+														input.form-control(type="text" placeholder="Поиск по Кадастровому номер или адресу..." value="")
+												
+												.form-group.mb-20.row.align-items-start
+													label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Адрес
+													.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+														input.form-control(type="text" placeholder="Заполняется автоматич..." value="" disabled)
+												.form-group.mb-20.row.align-items-start
+													label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Площадь
+													.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+														input.form-control(type="text" placeholder="Заполняется автоматич..." value="" disabled)
+												.form-group.mb-20.row.align-items-start
+													label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Кадастровая ст-ть
+													.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+														input.form-control(type="text" placeholder="Заполняется автоматич..." value="" disabled)
+												.form-group.mb-20.row.align-items-start
+													label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Кадастровый номер
+													.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+														input.form-control(type="text" placeholder="Заполняется автоматич..." value="" disabled)
+												.form-group.mb-20.row.align-items-start
+													label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Категория
+													.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+														input.form-control(type="text" placeholder="Заполняется автоматич..." value="" disabled)
+												.form-group.mb-20.row.align-items-start
+													label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Этаж
+													.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+														input.form-control(type="text" placeholder="Заполняется автоматич..." value="" disabled)
+												.form-group.mb-20.row.align-items-start
+													label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 (ОКС) Этажность
+													.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+														input.form-control(type="text" placeholder="Заполняется автоматич..." value="" disabled)
+												.form-group.mb-20.row.align-items-start
+													label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 (ОКС) Подземная этажность
+													.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+														input.form-control(type="text" placeholder="Заполняется автоматич..." value="" disabled)
+												.form-group.mb-20.row.align-items-start
+													label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Ограничения
+													.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+														input.form-control(type="text" placeholder="Если есть" value="")
+
+											.form-group.mt-60
+												b Права на объект залога
+											.form-group.mb-20.row.align-items-start
+												label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Форма собственности
+												.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+													select.selectpicker(placeholder="Выбрать...")
+														option(selected) Выбрать...
+														option Выбрать...
+											.form-group.mb-20.row.align-items-start
+												label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Количество правообладателей
+												.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+													input.form-control(type="text" placeholder="Ввести..." value="")
+											.form-group.mb-20.row.align-items-start
+												label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Номер
+												.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+													input.form-control(type="text" placeholder="Ввести..." value="")
+											.form-group.mb-20.row.align-items-start
+												label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Дата
+												.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+													input.form-control.datepicker(type="" placeholder="Выбрать дату")
+
+											.form-group.mb-30.mt-60
+												b Дополнительная информация
+											.form-group.mb-35
+												.col-xl-9.col-md-11.col-sm-12.pr-md-0.pl-xl-0
+													textarea.form-control(placeholder="Описание в свободной форме (условное объявление, что хорошего в этом объекте: ремонт, удаленность от метро, удачная планировка, расположение, вид из окна, лифты и т.д.)")
+
+											.form-group.mb-30.mt-60
+												b Загрузка документов
+											.form-group.mb-50
+												.col-xl-9.col-md-11.col-sm-12.pr-md-0.pl-xl-0
+													label.col-form-label.font-weight-bolder Документы подтверждающие право собственности*
+													small Документы подтверждающие право собственности на недвижимость (договор, свидетельство и/или выписка из ЕГРН) – в отношении каждого собственника (если их несколько)
+
+													.documents
+														.documents-shadow
+														.documents-list
+															.documents-item.upload
+																input#file-1(type="file" name="file")
+																label(for="file-1")
+																	+svg("plus")(width="43" height="42")
+																	| Загрузить
+															.documents-item.docx
+																.documents-item-icon
+																	+svg("ic-doc")(width="50" height="66")
+																.documents-item-desc
+																	span Наименование документа.docx
+																	span.documents-item-size 1.3 Mb
+																.documents-item-hover
+																	span Наименование документа.docx
+																	.btn.btn-primary.mt-10 Открыть
+																	.btn.btn-danger Удалить
+
+											.form-group.mb-50
+												.col-xl-9.col-md-11.col-sm-12.pr-md-0.pl-xl-0
+													label.col-form-label.font-weight-bolder Выписка из домовой книги*
+													small Выписка из домовой книги о проживающих лицах  – в отношении каждого собственника (если их несколько)
+
+													.documents
+														.documents-shadow
+														.documents-list
+															.documents-item.upload
+																input#file-1(type="file" name="file")
+																label(for="file-1")
+																	+svg("plus")(width="43" height="42")
+																	| Загрузить
+															.documents-item.pdf
+																.documents-item-icon
+																	+svg("ic-pdf")(width="27" height="35")
+																.documents-item-desc
+																	span Наименование документа.pdf
+																	span.documents-item-size 1.3 Mb
+																.documents-item-hover
+																	span Наименование документа.pdf
+																	.btn.btn-primary.mt-10 Открыть
+																	.btn.btn-danger Удалить
+															.documents-item.docx
+																.documents-item-icon
+																	+svg("ic-doc")(width="50" height="66")
+																.documents-item-desc
+																	span Наименование документа.docx
+																	span.documents-item-size 1.3 Mb
+																.documents-item-hover
+																	span Наименование документа.docx
+																	.btn.btn-primary.mt-10 Открыть
+																	.btn.btn-danger Удалить
+															.documents-item.pdf
+																.documents-item-icon
+																	+svg("ic-pdf")(width="27" height="35")
+																.documents-item-desc
+																	span Наименование документа.pdf
+																	span.documents-item-size 1.3 Mb
+																.documents-item-hover
+																	span Наименование документа.pdf
+																	.btn.btn-primary.mt-10 Открыть
+																	.btn.btn-danger Удалить
+															.documents-item.pdf
+																.documents-item-icon
+																	+svg("ic-pdf")(width="27" height="35")
+																.documents-item-desc
+																	span Наименование документа.pdf
+																	span.documents-item-size 1.3 Mb
+																.documents-item-hover
+																	span Наименование документа.pdf
+																	.btn.btn-primary.mt-10 Открыть
+																	.btn.btn-danger Удалить
+
+											.form-group.mb-50
+												.col-xl-9.col-md-11.col-sm-12.pr-md-0.pl-xl-0
+													label.col-form-label.font-weight-bolder Документы, подтверждающие обременения*
+
+													.documents
+														.documents-shadow
+														.documents-list
+															.documents-item.upload
+																input#file-1(type="file" name="file")
+																label(for="file-1")
+																	+svg("plus")(width="43" height="42")
+																	| Загрузить
+															.documents-text
+																p Не загружено ни одного файла...
+
+											.form-group.mb-50.mt-80
+												.col-xl-9.col-md-11.col-sm-12.pr-md-0.pl-xl-0
+													label.col-form-label.font-weight-bolder Фото объекта
+
+													.documents
+														.documents-shadow
+														.documents-list
+															.documents-item.upload
+																input#file-1(type="file" name="file")
+																label(for="file-1")
+																	+svg("plus")(width="43" height="42")
+																	| Загрузить
+															.documents-item.photo(style="background-image: url(./images/photo.jpg)")
+																span.documents-item-size 1.3 Mb
+																.documents-item-hover
+																	span Filename.jpg
+																	.btn.btn-primary.mt-10 Открыть
+																	.btn.btn-danger Удалить
+															.documents-item.photo(style="background-image: url(./images/photo.jpg)")
+																span.documents-item-size 1.3 Mb
+																.documents-item-hover
+																	span Filename.jpg
+																	.btn.btn-primary.mt-10 Открыть
+																	.btn.btn-danger Удалить
+															.documents-item.photo(style="background-image: url(./images/photo.jpg)")
+																span.documents-item-size 1.3 Mb
+																.documents-item-hover
+																	span Filename.jpg
+																	.btn.btn-primary.mt-10 Открыть
+																	.btn.btn-danger Удалить
+															.documents-item.photo(style="background-image: url(./images/photo.jpg)")
+																span.documents-item-size 1.3 Mb
+																.documents-item-hover
+																	span Filename.jpg
+																	.btn.btn-primary.mt-10 Открыть
+																	.btn.btn-danger Удалить
+
+											.form-group.mb-5
+												.col-xl-9.col-md-12.col-sm-12.pr-md-0.pl-xl-0
+													.row
+														.col-sm-6
+															.btn.btn-primary.text-uppercase.w-100.pl-0.pr-0.mb-25 Сохранить ОБЪЕКТ
+														.col-sm-6
+															.btn.btn-danger.text-uppercase.w-100.pl-0.pr-0.mb-25 УДАЛИТЬ ОБЪЕКТ
+											
+											hr.mb-50
+																
+										.tab-pane.fade#object-2(role="tabpanel" aria-labelledby="object-2-tab")
+											p Добавить объект
+
+								.form-group.row.align-items-center.mb-30(data-toggle="collapse" data-target="#objectMore-4" role="button" aria-expanded="true" aria-controls="objectMore-4")
+									.col-xl-8.col-md-10.col-11.pr-0
+										h5.m-0 Условия займа 
+									.col-1.text-right.pl-0
+										a.more
+											+svg("chevron-down")
+
+								.collapse.show.mb-30#objectMore-4
+									.form-group.mb-20.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Сумма займа*
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control(type="text" placeholder="Ввести..." value="" required)
+									.form-group.mb-20.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Срок займа*
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control.datepicker(type="" placeholder="Выбрать дату")
+									.form-group.mb-20.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Желаемая дата получения денежных средств*
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control.datepicker(type="" placeholder="Выбрать дату")
+									.form-group.mb-20.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Ставка, % годовых*
+										.col-xl-3.col-md-5.col-sm-6.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control(type="text" placeholder="0 %" value="20 %")
+									.form-group.mb-20.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Дата начала действия оферты
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control.datepicker(type="" placeholder="Выбрать дату")
+									.form-group.mb-20.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Дата окончания оферты
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control.datepicker(type="" placeholder="Выбрать дату")
+									.form-group.mb-20.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Дата начала действия оферты
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control.datepicker(type="" placeholder="Выбрать дату")
+									.form-group.mb-20.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Досрочное погашение
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											select.selectpicker(placeholder="Выбрать...")
+												option(selected) Выбрать...
+												option Выбрать...
+									.form-group.mb-20.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Пеня за просрочку
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											select.selectpicker(placeholder="Фиксированный разме...")
+												option(selected) Фиксированный разме...
+												option Выбрать...
+									.form-group.mb-20.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Размер пени*
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control(type="text" placeholder="0" value="")
+									.form-group.mb-20.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Штраф за просрочку
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											select.selectpicker(placeholder="Процент от суммы зай...")
+												option(selected) Процент от суммы зай...
+												option Выбрать...
+									.form-group.mb-20.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Размер штрафа*
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control(type="text" placeholder="0" value="")
+									.form-group.mb-20.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Способ получения денежных средств
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											select.selectpicker(placeholder="Выбрать...")
+												option(selected) Наличные
+												option Выбрать...
+
+								.form-group.mb-20.row.align-items-start
+									label.col-xl-5.col-md-7.col-sm-8.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Поручители
+
+								.form-group
+									ul.nav.nav-tabs#guarantorTab(role="tablist")
+										li.nav-item(role="presentation")
+											a.nav-link.active#guarantor-1-tab(data-toggle="tab" href="#guarantor-1" role="tab" aria-controls="guarantor-1" aria-selected="true") 1
+										li.nav-item(role="presentation")
+											a.nav-link#guarantor-2-tab(data-toggle="tab" href="#guarantor-2" role="tab" aria-controls="guarantor-2" aria-selected="true") 2
+										li.nav-item(role="presentation")
+											a.nav-link#guarantor-3-tab(data-toggle="tab" href="#guarantor-3" role="tab" aria-controls="guarantor-3" aria-selected="false") +
+
+								.tab-content#guarantorTabContent
+									.tab-pane.fade.show.active#guarantor-1(role="tabpanel" aria-labelledby="guarantor-1-tab")
+										.form-group.mb-20.row.align-items-start
+											label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Поручитель
+											.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+												select.selectpicker(placeholder="Выбрать...")
+													option(selected) Выбрать...
+													option Выбрать...
+										.form-group.mb-20.row.align-items-start
+											label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Ответственность
+											.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+												select.selectpicker(placeholder="Выбрать...")
+													option(selected) Солидарная
+													option Выбрать...
+									.tab-pane.fade#guarantor-2(role="tabpanel" aria-labelledby="guarantor-2-tab")
+										.form-group.mb-20.row.align-items-start
+											label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Поручитель
+											.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+												select.selectpicker(placeholder="Выбрать...")
+													option(selected) Выбрать...
+													option Выбрать...
+										.form-group.mb-20.row.align-items-start
+											label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Ответственность
+											.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+												select.selectpicker(placeholder="Выбрать...")
+													option(selected) Солидарная
+													option Выбрать...
+									.tab-pane.fade#guarantor-3(role="tabpanel" aria-labelledby="guarantor-3-tab")
+										.form-group.mb-20.row.align-items-start
+											label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Добавить
+
+								hr.mt-50.mb-30
+								.form-group.mb-20.row.align-items-start
+									label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Право пользования и распоряжения предметом залога
+									.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+										select.selectpicker(placeholder="Выбрать...")
+											option(selected) Остается у залогодате...
+											option Выбрать...
+								.form-group.mb-20.row.align-items-start
+									label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Право передачи заемщиком прав
+									.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+										select.selectpicker(placeholder="Выбрать...")
+											option(selected) Отсутствует, только с с...
+											option Выбрать...
+								.form-group.mb-20.row.align-items-start
+									label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Преимущ. право выплаты Инвестору
+									.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+										select.selectpicker(placeholder="Выбрать...")
+											option(selected) Есть
+											option Выбрать...
+								.form-group.mb-20.row.align-items-start
+									label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Право передачи заемщиком прав
+									.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+										select.selectpicker(placeholder="Выбрать...")
+											option(selected) Отсутствует, только с с...
+											option Выбрать...
+
+								.form-group.mb-50.mt-35
+									.col-xl-9.col-md-11.col-sm-12.pr-md-0.pl-xl-0
+										label.col-form-label.font-weight-bolder Документы*
+										small Документы для загрузки (включая согласие супруга/супруги на совершение сделки в отношении физических лиц и ИП, если они женаты/замужем и не имеют брачного контракта, либо для юридических лиц – решение/протокол на совершение сделки либо обоснование в отсутствии необходимости в таком решении/протоколе)
+
+										.documents
+											.documents-shadow
+											.documents-list
+												.documents-item.upload
+													input#file-1(type="file" name="file")
+													label(for="file-1")
+														+svg("plus")(width="43" height="42")
+														| Загрузить
+												.documents-item.pdf
+													.documents-item-icon
+														+svg("ic-pdf")(width="27" height="35")
+													.documents-item-desc
+														span Наименование документа.pdf
+														span.documents-item-size 1.3 Mb
+													.documents-item-hover
+														span Наименование документа.pdf
+														.btn.btn-primary.mt-10 Открыть
+														.btn.btn-danger Удалить
+												.documents-item.docx
+													.documents-item-icon
+														+svg("ic-doc")(width="50" height="66")
+													.documents-item-desc
+														span Наименование документа.docx
+														span.documents-item-size 1.3 Mb
+													.documents-item-hover
+														span Наименование документа.docx
+														.btn.btn-primary.mt-10 Открыть
+														.btn.btn-danger Удалить
+												.documents-item.pdf
+													.documents-item-icon
+														+svg("ic-pdf")(width="27" height="35")
+													.documents-item-desc
+														span Наименование документа.pdf
+														span.documents-item-size 1.3 Mb
+													.documents-item-hover
+														span Наименование документа.pdf
+														.btn.btn-primary.mt-10 Открыть
+														.btn.btn-danger Удалить
+												.documents-item.pdf
+													.documents-item-icon
+														+svg("ic-pdf")(width="27" height="35")
+													.documents-item-desc
+														span Наименование документа.pdf
+														span.documents-item-size 1.3 Mb
+													.documents-item-hover
+														span Наименование документа.pdf
+														.btn.btn-primary.mt-10 Открыть
+														.btn.btn-danger Удалить
+
+								.form-group.mb-20.row.align-items-start
+									label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Сопровождение сделки и оплата услуг специалистов FSN24
+									.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+										select.selectpicker(placeholder="Выбрать...")
+											option(selected) Не требуется
+											option Выбрать...
+								.form-group.mb-20.row.align-items-start
+									label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Выплата процентов
+									.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+										select.selectpicker(placeholder="Выбрать...")
+											option(selected) Ежемесячная
+											option Выбрать...
+
+								.form-group.row.align-items-center.mt-35.justify-content-center
+									.col-sm-6
+										button.btn.btn-primary.text-uppercase.w-100.mt-30(type="submit") Сохранить
+									.col-sm-6
+										button.btn.btn-outline-success.text-uppercase.w-100.mt-30(type="") отправить на&nbsp;модерацию и&nbsp;публикацию
+

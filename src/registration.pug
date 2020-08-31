@@ -1,0 +1,15 @@
+extends pug/base-auth
+
+append vars
+	- html.classList.push('page-registration')
+
+block content
+	section.pt-60.pt-sm-80.pt-md-65.pt-lg-80.pt-xl-100.pb-55.pb-sm-60.pb-md-45.pb-xl-7
+		.container.text-center
+			h1 Финансовая социальная сеть. 
+			p Используй свой логин и пароль, если уже  с нами. #[br]Ты здесь впервые? #[br]Присоединись к нам и пройди регистрацию.
+			.mt-35.mt-sm-40.mt-md-40.mt-lg-45.mb-40.mb-md-45.mb-lg-50.mb-xl-60
+				a.btn.btn-primary.btn-sm.text-uppercase.mr-sm-10.mr-md-15(href="#") Войти
+				a.btn.btn-outline-success.btn-sm.w-sm-auto.mt-35.mt-sm-0.ml-sm-10.ml-md-15(href="#") Зарегистрироваться
+			p.m-0 Присоединяйся к сообществу Финансовой социальной сети.
+				

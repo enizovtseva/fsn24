@@ -1,0 +1,353 @@
+extends pug/base-lk
+
+append vars
+	- html.classList.push('page-lk')
+
+block content	
+	section
+		.container
+			.page-lk-offer-search
+				.card.page-lk-offer-search-form
+					form
+						.row
+							.col
+								select.selectpicker(placeholder="Сумма от - до")
+									option(selected) Все суммы
+									option от 500 000 до 1 млн. руб.
+									option от 1 млн. руб. до 1,5 млн.руб.
+									option от 1,5 млн.руб. до 5 млн.руб.
+									option от 5 млн.руб. до 10 млн.руб.
+									option от 10 млн.руб.
+							.col
+								select.selectpicker(placeholder="Объект залога")
+									option(selected) Все объекты
+									option Квартиры
+									option 1 - ком. квартиры
+									option 2 - ком.квартиры
+									option 3 - ком. квартиры
+									option Квартиры - студии
+							.col
+								select.selectpicker(placeholder="Регионы объекта")
+									option(selected) Все города
+									option Астрахань
+									option Великий Новгород
+									option Владивосток
+									option Волгоград
+									option Барнаул
+							a(href="#") Еще фильтры
+				.page-lk-offer-search-filter
+
+			.row.justify-content-center
+				.col-lg-10
+					.card.page-lk-offer-header
+						.card-body
+							.row.flex-wrap.align-items-center
+								.col-sm-7.col-md-9
+									h4 Оферта:  Индивидуального предпринимателя
+								.col-sm-5.col-md-3.d-flex.justify-content-sm-end.mt-30.mt-sm-0
+									a.edit(href="#")
+										+svg("edit")
+									a.no-watch(href="#")
+										+svg("no-watch")
+									a.trash(href="#")
+										+svg("trash")
+					.card
+						.card-body
+							.row.align-items-center.mb-25
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									h5 Информация:
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span ID: 45688654
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Сумма займа:
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span 4 568 865 руб.
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Срок займа:
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span 11/10/2020
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Ставка, % годовых:
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span 20%
+					.card
+						.card-body
+							.row.align-items-center.mb-25
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									h5 Заемщик:
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Возраст:
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span 37 лет
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Пол:
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span мужской
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Гражданство:
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span Россия
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Город регистрации:
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span г. Москва
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Семейное положение:
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span женат
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Несовершеннолетние дети:
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span да
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Количество детей: 
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span 2
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Возраст детей: 
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span 2 года; 5 лет
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Ограничение дееспособности: 
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span Нет
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Срок регистрации ИП: 
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span 6 месяцев - 1 год
+							.row.mt-25.mb-20
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									h6 Гарантии и заверения: 
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Наличие неисполненных обязательств перед кредиторами: 
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span Нет
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Наличие судебных производств:
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span Нет
+					.card
+						.card-body
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Желаемая дата получения денежных средств: 
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span 20/10/2020
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Дата начала действия оферты:
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span 21/10/2020
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Дата окончания оферты: 
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span 21/11/2020
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Досрочное погашение: 
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span В любое время
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Пеня за просрочку: 
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span Фиксированный размер
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Штраф за просрочку:
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span 0 руб.
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Способ получения денежных средств:
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span Наличные
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Поручители:
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span Нет
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Право пользования и распоряжения предметом залога:
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span Остается у залогодателя
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Право передачи заемщиком права пользования или распоряжения предметом залога третьим лицам:
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span Отсутствует, только с согласия Инвестора
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Преимущественное право выплаты Инвестору перед иными кредиторами: 
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span Есть
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Сопровождение сделки и оплата услуг специалистов FSN24: 
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span Не требуется
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Выплата процентов по займу: 
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span Ежемесячная
+					.card
+						.card-body
+							.row.align-items-center.mb-25
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									h5 Объект залога: 
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Наименование объекта залога: 
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span Квартира
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Тип объекта залога: 
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span Жилой фонд
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Адрес: 
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span г. Москва ул. Новая д.7
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Площадь: 
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span 45 м²
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Кадастровая стоимость: 
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span 2 350 000 руб.
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Этаж: 
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span 8
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Форма собственности: 
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span Частная
+							.row.mt-25.mb-20
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									em Правообладатели:
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+							ul.nav.nav-tabs#holdersTab(role="tablist")
+								li.nav-item(role="presentation")
+									a.nav-link.active#holder-1-tab(data-toggle="tab" href="#holder-1" role="tab" aria-controls="holder-1" aria-selected="true") 1
+								li.nav-item(role="presentation")
+									a.nav-link#holder-2-tab(data-toggle="tab" href="#holder-2" role="tab" aria-controls="holder-2" aria-selected="false") 2
+							.tab-content.mt-25#holdersTabContent
+								.tab-pane.fade.show.active#holder-1(role="tabpanel" aria-labelledby="holder-1-tab")
+									.row
+										.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+											b Правообладатель: 
+										.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+											span Юридическое лицо
+									.row
+										.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+											b Доля владения: 
+										.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+											span 70%
+									.row
+										.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+											b Совпадает с заемщиком: 
+										.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+											span Нет
+									.row
+										.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+											b Срок регистрации: 
+										.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+											span 3-6 месяцев
+									.row
+										.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+											b Адрес регистрации: 
+										.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+											span г. Москва
+									.row
+										.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+											b Размер уставного капитала: 
+										.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+											span 100 000 руб.
+								.tab-pane.fade#holder-2(role="tabpanel" aria-labelledby="holder-2-tab")
+									.row
+										.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+											b Правообладатель: 
+										.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+											span Физическое лицо
+									.row
+										.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+											b Доля владения: 
+										.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+											span 50%
+									.row
+										.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+											b Совпадает с заемщиком: 
+										.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+											span Нет
+							hr
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Ограничения: 
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span Есть, аренда
+							.row.align-items-start
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Описание от заемщика: 
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span Speciem parte duae formaeque amphitrite tellus habentia deus. Motura sole timebat ora! Phoebe effervescere. Usu liquidas calid.
+							.row.flex-wrap.align-items-start
+								.col-sm-12.col-md-6.col-lg-5.pr-md-30
+									b Фотографии объекта:
+								.col-sm-12.col-md-6.col-lg-7.pl-md-0
+									.documents.pt-0
+										.documents-shadow
+										.documents-list
+											.documents-item.photo(style="background-image: url(./images/photo.jpg)")
+												span.documents-item-size 1.3 Mb
+											.documents-item.photo(style="background-image: url(./images/photo.jpg)")
+												span.documents-item-size 1.3 Mb
+											.documents-item.photo(style="background-image: url(./images/photo.jpg)")
+												span.documents-item-size 1.3 Mb
+											.documents-item.photo(style="background-image: url(./images/photo.jpg)")
+												span.documents-item-size 1.3 Mb
+					.card
+						.card-body
+							.row.align-items-start
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Статус проверки FSN24: 
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span Speciem parte duae formaeque amphitrite tellus habentia deus. Motura sole timebat ora! Phoebe effervescere. Usu liquidas calid.
+							.row
+								.col-sm-7.col-md-6.col-lg-5.pr-sm-30
+									b Количество инвесторов: 
+								.col-sm-5.col-md-6.col-lg-7.pl-sm-0
+									span 3
+							.row.flex-wrap.justify-content-center
+								.col-sm-6.col-md-5.col-xl-4.pl-md-0
+									button.btn.btn-primary.w-100.mt-30 Принять участие
+								.col-sm-6.col-md-5.col-xl-4.pr-md-0
+									button.btn.btn-danger.w-100.mt-30 Встречное предложение

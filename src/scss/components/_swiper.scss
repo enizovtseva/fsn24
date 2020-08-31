@@ -1,0 +1,113 @@
+.swiper {
+  &-button {
+    width: 2.5rem; height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    cursor: pointer;
+    transition: all .25s ease-in-out;
+    svg {
+      width: 1.625rem; height: 1rem;
+      fill: $blue;
+      transition: all .25s ease-in-out;
+    }
+    &.prev {
+      margin-right: 0.625rem;
+      justify-content: flex-end;
+    }
+    &.next {
+      margin-left: 0.625rem;
+      justify-content: flex-start;
+      background-image: url(../images/sprites/svg/arrow-arc.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: auto 100%;
+    }
+    &:hover,
+    &.swiper-button-disabled {
+      svg { opacity: .5; }
+    }
+    &.swiper-button-disabled { cursor: default; }
+  }
+
+  &-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media(max-width: 399px) {
+      flex-direction: column;
+    }
+    a {
+      //margin-top: 0.4375rem;
+      margin-right: 1rem;
+      letter-spacing: 1.0px;
+      @media(max-width: 1027px) {
+        margin: 0;
+        letter-spacing: .3px;
+      }
+      @media(max-width: 399px) {
+        margin-top: 17px;
+      }
+    }
+  }
+  &-buttons {
+    margin-right: 0.9375rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media(max-width: 399px) {
+      margin: 17px 0 0;
+    }
+  }
+
+  &-pagination {
+    height: 2.5rem;
+    padding-right: 18px;
+    margin-right: 0.9375rem;
+    display: flex;
+    align-items: center;
+    background-image: url(../images/sprites/svg/arrow-arc.svg);
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+    @media(max-width: 399px) {
+      margin: 17px 0 0;
+    }
+    li {
+      margin: 0 5px;
+      &:first-child { margin-left: 0; }
+      &:last-child { margin-right: 0; }
+      &.slick-active {
+        button { background-color: $blue; }
+      }
+    }
+    li button,
+    &-bullet {
+      width: .5rem; height: .5rem;
+      display: block;
+      margin: 0 5px;
+      border-radius: 50%;
+      background-color: $gray-200;
+      outline: none;
+      font-size: 0;
+      padding: 0;
+      border: none;
+      &.swiper-pagination-bullet-active {
+        background-color: $blue;
+      }
+      &:first-child { margin-left: 0; }
+      &:last-child { margin-right: 0; }
+    }
+
+    .slick-dots {
+      height: 2.5rem;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      list-style-type: none;
+    }
+  }
+}

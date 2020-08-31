@@ -1,0 +1,126 @@
+header.header-lk
+  .container
+    .header
+      nav.navbar
+        a.navbar-brand.mr-30.ml-xr-70(href="/")
+          +svg("logo").logo
+        ul.navbar-nav.header-navbar
+          li.nav-item.d-none.d-md-block
+            .header-city(data-toggle="modal" data-target="#cityModal")
+              +svg("map")(width="23" height="22")
+              span.d-none.d-lg-inline Поиск на карте
+          li.nav-item.dropdown.d-none.d-sm-flex
+            .header-account
+              span Лицевой счет: 
+              a.nav-link.dropdown-toggle#navbarDropdown(href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 051110235001
+              .dropdown-menu(aria-labelledby="navbarDropdown")
+                a.dropdown-item(href="#") Пополнить
+                .dropdown-divider
+                a.dropdown-item(href="#") Вывести средства
+                .dropdown-divider
+                a.dropdown-item(href="#") История операций
+          li.nav-item.d-none.d-md-block
+            .custom-control.custom-switch.lang
+              input#customSwitch1.custom-control-input(type="checkbox")
+              label.custom-control-label(for="customSwitch1") 
+                span Рус
+
+        ul.navbar-nav.ml-sm-35.ml-xl-75
+          li.nav-item.d-none
+            a.nav-link.text-uppercase(href="#") Log in
+          li.nav-item.dropdown
+            a.nav-link.dropdown-toggle#navbarLogin(href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Иван
+            .dropdown-menu(aria-labelledby="navbarLogin")
+              a.dropdown-item(href="#") На главную
+              .dropdown-divider
+              a.dropdown-item(href="#") Выход
+          li.nav-item.d-none.d-lg-block
+            .user-photo.ml-20
+              span.badge.badge-primary
+              span И
+          li.nav-item.dropdown.d-xl-none.d-lg-none
+            .hamburger.ml-30(data-toggle="collapse" data-target="#hamburger-dropdown" aria-expanded="false" aria-controls="hamburger-dropdown")
+              .hamburger-box
+                .hamburger-inner
+      
+.hamburger-dropdown.collapse#hamburger-dropdown
+  .container
+    .header
+      nav.navbar
+        li.nav-item.d-none.d-sm-flex
+          .user-photo.ml-0.mr-30
+            span.badge.badge-primary
+            span И
+          span Иван
+        li.nav-item.d-md-none
+          .custom-control.custom-switch
+            input#customSwitch1.custom-control-input(type="checkbox")
+            label.custom-control-label(for="customSwitch1") 
+              span Рус
+        li.nav-item.d-sm-none
+          .header-city(data-toggle="modal" data-target="#cityModal")
+            +svg("map")(width="23" height="22")
+    hr
+    ul.nav.flex-column.text-center
+      li.nav-item
+        a.nav-link(href="/") Главная
+      li.nav-item
+        a.nav-link(href="#") Наши контакты
+      li.nav-item
+        a.nav-link(href="#") Партнерам
+    hr.mb-30.d-md-none
+    ul.mb-15.d-md-none.nav.flex-column.text-center
+      li.nav-item.d-none.d-sm-block
+        .header-city.d-inline-flex(data-toggle="modal" data-target="#cityModal")
+          +svg("map")(width="23" height="22")
+          span Поиск на карте
+      li.nav-item.dropdown.d-sm-none
+        .header-account
+          span Лицевой счет: 
+          a.nav-link.dropdown-toggle#navbarDropdown(href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 051110235001
+          .dropdown-menu(aria-labelledby="navbarDropdown")
+            a.dropdown-item(href="#") Пополнить
+            .dropdown-divider
+            a.dropdown-item(href="#") Вывести средства
+            .dropdown-divider
+            a.dropdown-item(href="#") История операций
+
+
+.modal.fade#cityModal(tabindex="-1" role="dialog" aria-labelledby="cityModalLabel" aria-hidden="true")
+  .modal-dialog.modal-sm
+    .modal-content
+      .modal-body.text-center
+        b Ваш город  - Москва?
+        .modal-buttons
+          button.btn.btn-primary.btn-sm(type="button" data-dismiss="modal") Да
+          button.btn.btn-outline-success.btn-sm(type="button" data-dismiss="modal" data-toggle="modal" data-target="#changeCityModal") Другой город
+
+.modal.fade#changeCityModal(tabindex="-1" role="dialog" aria-labelledby="changeCityModalLabel" aria-hidden="true")
+  .modal-dialog
+    .modal-content
+      .modal-body
+        button.close(type="button" data-dismiss="modal" aria-label="Close")
+          span(aria-hidden="true") &times;
+        h5 Ваш город: Москва?
+        p.text-success.m-0 Выберите из списка
+        hr
+        .row
+          .col-md-4
+            p.changeCity(data-value="Москва") Москва
+            p.changeCity(data-value="") Санкт-Петербург
+            p.changeCity(data-value="") Екатеринбург
+            p.changeCity(data-value="") Воронеж
+            p.changeCity(data-value="") Казань
+          .col-md-4
+            p.changeCity(data-value="") Краснодар
+            p.changeCity(data-value="") Нижний Новгород
+            p.changeCity(data-value="") Новосибирск 
+            p.changeCity(data-value="") Омск
+            p.changeCity(data-value="") Пермь
+          .col-md-4
+            p.changeCity(data-value="") Ростов-на-Дону
+            p.changeCity(data-value="") Самара
+            p.changeCity(data-value="") Саратов
+            p.changeCity(data-value="") Уфа
+            p.changeCity(data-value="") Челябинск
+

@@ -1,0 +1,143 @@
+extends pug/base-lk
+
+append vars
+	- html.classList.push('page-lk')
+
+block content
+
+	section
+		.container
+			nav(aria-label="breadcrumb")
+				ol.breadcrumb
+					li.breadcrumb-item(aria-current="page")
+						+svg("user")(width="27" height="27")
+						| Мой профиль
+					li.breadcrumb-item(aria-current="page") Лицевой счет
+					li.breadcrumb-item(aria-current="page") Пополнить
+					
+	section.pt-20.pt-xl-0
+		.container
+
+			.card.bg-primary.page-lk-alert.mb-50.d-none.d-lg-block
+				.card-body.pr-15.pl-15.pr-md-20.pt-25.pb-25.pl-md-25
+					.row.align-items-center
+						.col-sm-7.col-md-9
+							span Основной пользователь: Иванов Иван Иванович
+						.col-sm-5.col-md-3.d-flex.justify-content-sm-end.mt-30.mt-sm-0
+							span Баланс: #[b 1 000 руб.]
+
+			.row
+				.col-lg-4.col-sm-12.order-1.order-lg-0
+					.card.user-nav
+						.card-body.pt-20.pr-10.pb-20.pl-10.pt-xl-25.pr-xl-30.pb-xl-15.pl-xl-30
+							ul.nav.flex-column
+								li.nav-item.mb-10
+									a.nav-link(href="/lk-personal-account.html") Мой профиль
+								li.nav-item.mb-10
+									a.nav-link.active(href="/lk-main-user.html") Пользователи
+								li.nav-item
+									a.nav-link(href="/lk-collateral-objects.html") Объекты залога
+								li.nav-item
+									a.nav-link(href="/lk-notifications.html") Уведомления 
+										span.badge.badge-pill.badge-danger 3
+								li.nav-item
+									a.nav-link(href="/lk-my-offers.html") Мои оферты
+								li.nav-item
+									a.nav-link(href="/lk-participation-in-offers.html") Участие в офертах
+										span.badge.badge-pill.badge-danger 1
+								li.nav-item
+									a.nav-link(href="/lk-counter-offers.html") Встречные предложения
+										span.badge.badge-pill.badge-danger 1
+								li.nav-item
+									a.nav-link(href="/lk-search-ads.html") Поиск объявлений
+						ul.list-group
+							li.list-group-item.border-right-0.border-left-0.pt-25.pb-30
+								a.btn.btn-secondary.w-100(href="/lk-personal-account-edit.html")
+									+svg("settings")(width="21" height="21")
+									| Настройки
+											
+				.col-lg-8.col-sm-12.order-0.order-lg-1
+					.payment.mb-30.mb-lg-0
+						ul.nav.nav-tabs#paymentTab(role="tablist")
+							li.nav-item(role="presentation")
+								a.nav-link.active#bank_card-tab(data-toggle="tab" href="#bank_card" role="tab" aria-controls="investors" aria-selected="true")
+									+svg("bank_card")(width="137" height="47")
+							li.nav-item(role="presentation")
+								a.nav-link#other-tab(data-toggle="tab" href="#other" role="tab" aria-controls="other" aria-selected="false") Другие способы
+						
+						.tab-content#paymentTabContent
+							.tab-pane.fade.show.active#bank_card(role="tabpanel" aria-labelledby="bank_card-tab")
+								form(action="")
+									.form-group.row.align-items-center
+										label.col-md-6 Сумма платежа
+										.col-md-6.text-right
+											.payment-amount
+												input.form-control(type="tel" placeholder="Введите сумму" value="")
+												span руб.
+									.payment-card
+										.form-group.text-right.pr-20
+											img.mr-10(src="./images/logo-mastercard.png", alt="")
+											img(src="./images/logo-visa.png", alt="")
+										.form-group
+											input(type="text" placeholder="Номер карты")
+										.form-group.d-flex.align-items-center.mb-0
+											.payment-card-date.d-flex.align-items-center
+												input(type="text" placeholder="мм")
+												span.ml-2.mr-2 /
+												input(type="text" placeholder="гг")
+											.payment-card-cvv.d-flex.align-items-center
+												small Три цифры с оборотной стороны карты
+												input(type="text" placeholder="CVV")
+
+									.form-group.row.mt-20.justify-content-center
+										.col-md-9
+											button.btn.btn-primary.w-100(href="#") Оплатить
+
+									.form-group.mt-20
+										.custom-control.custom-switch.custom
+											input.custom-control-input#customSwitch2(type="checkbox" checked)
+											label.custom-control-label(for="customSwitch2")
+												svg.mr-10(width="23" height="23" viewBox="0 0 23 23" fill="transparent" xmlns="http://www.w3.org/2000/svg")
+													path(d="M11.9492 21.7402C17.4721 21.7402 21.9492 17.2631 21.9492 11.7402C21.9492 6.21739 17.4721 1.74023 11.9492 1.74023C6.42637 1.74023 1.94922 6.21739 1.94922 11.7402C1.94922 17.2631 6.42637 21.7402 11.9492 21.7402Z" stroke="#0AC789" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+													path(d="M9.03906 8.7408C9.27417 8.07247 9.73821 7.50891 10.349 7.14994C10.9598 6.79096 11.678 6.65974 12.3762 6.77952C13.0745 6.89929 13.7079 7.26233 14.1641 7.80433C14.6204 8.34634 14.8701 9.03233 14.8691 9.7408C14.8691 11.7408 11.8691 12.7408 11.8691 12.7408" stroke="#0AC789" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+													path(d="M11.9492 16.7402H11.9592" stroke="#0AC789" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+												| Автоматическое определение
+
+									.form-group.mt-25.text-center
+										small Нажав кнопку “Оплатить” выше, вы соглашаетесь с нашими #[a(href="#") Условиями использования] и #[a(href="#") Политикой конфедециальности]
+
+							.tab-pane.fade#other(role="tabpanel" aria-labelledby="other-tab")
+								form(action="")
+									.form-group.row.align-items-center
+										label.col-md-6 Сумма платежа
+										.col-md-6.text-right
+											.payment-amount
+												input.form-control(type="tel" placeholder="Введите сумму" value="")
+												span руб.
+									.form-group
+										.payment-list.row
+											.col-4
+												.payment-item
+													img(src="./images/logo-beeline.png", alt="")
+											.col-4
+												.payment-item
+													img(src="./images/logo-mts.png", alt="")
+											.col-4
+												.payment-item
+													img(src="./images/logo-qiwi.png", alt="")
+											.col-4
+												.payment-item
+													img(src="./images/logo-megafon.png", alt="")
+											.col-4
+												.payment-item
+													img(src="./images/logo-tele-2.png", alt="")
+											.col-4
+												.payment-item
+													img(src="./images/logo-yandex-dengi.png", alt="")
+
+									.form-group.row.mt-20.justify-content-center
+										.col-md-9
+											button.btn.btn-primary.w-100(href="#") Оплатить
+
+									.form-group.mt-25.text-center
+										small Нажав кнопку “Оплатить” выше, вы соглашаетесь с нашими #[a(href="#") Условиями использования] и #[a(href="#") Политикой конфедециальности]

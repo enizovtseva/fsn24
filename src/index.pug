@@ -1,0 +1,662 @@
+extends pug/base
+
+append vars
+	- html.classList.push('page-index')
+
+block content
+	section.pt-0
+		.container
+			.row.align-items-center
+				.col-lg-7.text-center
+					.page-index-head
+						h1 О&nbsp;финансах с&nbsp;гарантией.
+						p Финансовая социальная сеть для поиска и&nbsp;инвестирования денежных средств под&nbsp;залог имущества.
+						.page-index-buttons
+							a.btn.btn-primary.btn-sm.text-uppercase.mr-15(href="#") Инвестировать
+							a.btn.btn-outline-success.btn-sm.ml-15(href="#") Разместить займ
+						.to-down.d-none.d-sm-flex
+							svg(width="40" height="53" viewBox="0 0 40 53" fill="none")
+								path(fill-rule="evenodd" clip-rule="evenodd" d="M1.10172 34.9792C0.166908 34.9792 -0.256771 36.1476 0.460785 36.7468L19.1658 52.3653C19.5369 52.6751 20.0765 52.6751 20.4476 52.3653L39.1526 36.7468C39.8702 36.1476 39.4465 34.9792 38.5117 34.9792H36.6099C36.3757 34.9792 36.1488 35.0614 35.969 35.2116L20.4476 48.1718C20.0765 48.4816 19.5369 48.4816 19.1658 48.1718L3.64441 35.2116C3.46458 35.0614 3.23774 34.9792 3.00347 34.9792H1.10172Z")
+								path(fill-rule="evenodd" clip-rule="evenodd" d="M1.10172 17.6149C0.166908 17.6149 -0.256771 18.7834 0.460785 19.3825L19.1658 35.001C19.5369 35.3109 20.0765 35.3109 20.4476 35.001L39.1526 19.3825C39.8702 18.7834 39.4465 17.6149 38.5117 17.6149H36.6099C36.3757 17.6149 36.1488 17.6972 35.969 17.8473L20.4476 30.8075C20.0765 31.1174 19.5369 31.1174 19.1658 30.8075L3.64441 17.8473C3.46458 17.6972 3.23774 17.6149 3.00347 17.6149H1.10172Z")
+								path(fill-rule="evenodd" clip-rule="evenodd" d="M1.10172 0.249691C0.166908 0.249691 -0.256771 1.41813 0.460785 2.01729L19.1658 17.6358C19.5369 17.9456 20.0765 17.9456 20.4476 17.6358L39.1526 2.01729C39.8702 1.41813 39.4465 0.249691 38.5117 0.249691H36.6099C36.3757 0.249691 36.1488 0.331942 35.969 0.482096L20.4476 13.4423C20.0765 13.7522 19.5369 13.7522 19.1658 13.4423L3.64441 0.482096C3.46458 0.331942 3.23774 0.249691 3.00347 0.249691H1.10172Z")
+				.col-lg-5
+					.page-index-wood
+						img(src="./images/wood.png", alt="О финансах с гарантией")
+				.col-lg-12
+					.card.card-form
+						.card-body
+							form.page-index-form
+								.row
+									.col
+										select.selectpicker(placeholder="Сумма от - до")
+											option(selected) Все суммы
+											option от 500 000 до 1 млн. руб.
+											option от 1 млн. руб. до 1,5 млн.руб.
+											option от 1,5 млн.руб. до 5 млн.руб.
+											option от 5 млн.руб. до 10 млн.руб.
+											option от 10 млн.руб.
+									.col
+										select.selectpicker(placeholder="Объект залога")
+											option(selected) Все объекты
+											option Квартиры
+											option 1 - ком. квартиры
+											option 2 - ком.квартиры
+											option 3 - ком. квартиры
+											option Квартиры - студии
+									.col
+										select.selectpicker(placeholder="Регионы объекта")
+											option(selected) Все города
+											option Астрахань
+											option Великий Новгород
+											option Владивосток
+											option Волгоград
+											option Барнаул
+									a.btn.btn-danger.ml-15.mr-15(href="#") Найти
+
+	section.loan-amount.text-center
+		.container
+			.to-down.d-sm-none
+				svg(width="40" height="53" viewBox="0 0 40 53" fill="none")
+					path(fill-rule="evenodd" clip-rule="evenodd" d="M1.10172 34.9792C0.166908 34.9792 -0.256771 36.1476 0.460785 36.7468L19.1658 52.3653C19.5369 52.6751 20.0765 52.6751 20.4476 52.3653L39.1526 36.7468C39.8702 36.1476 39.4465 34.9792 38.5117 34.9792H36.6099C36.3757 34.9792 36.1488 35.0614 35.969 35.2116L20.4476 48.1718C20.0765 48.4816 19.5369 48.4816 19.1658 48.1718L3.64441 35.2116C3.46458 35.0614 3.23774 34.9792 3.00347 34.9792H1.10172Z")
+					path(fill-rule="evenodd" clip-rule="evenodd" d="M1.10172 17.6149C0.166908 17.6149 -0.256771 18.7834 0.460785 19.3825L19.1658 35.001C19.5369 35.3109 20.0765 35.3109 20.4476 35.001L39.1526 19.3825C39.8702 18.7834 39.4465 17.6149 38.5117 17.6149H36.6099C36.3757 17.6149 36.1488 17.6972 35.969 17.8473L20.4476 30.8075C20.0765 31.1174 19.5369 31.1174 19.1658 30.8075L3.64441 17.8473C3.46458 17.6972 3.23774 17.6149 3.00347 17.6149H1.10172Z")
+					path(fill-rule="evenodd" clip-rule="evenodd" d="M1.10172 0.249691C0.166908 0.249691 -0.256771 1.41813 0.460785 2.01729L19.1658 17.6358C19.5369 17.9456 20.0765 17.9456 20.4476 17.6358L39.1526 2.01729C39.8702 1.41813 39.4465 0.249691 38.5117 0.249691H36.6099C36.3757 0.249691 36.1488 0.331942 35.969 0.482096L20.4476 13.4423C20.0765 13.7522 19.5369 13.7522 19.1658 13.4423L3.64441 0.482096C3.46458 0.331942 3.23774 0.249691 3.00347 0.249691H1.10172Z")
+			span.h1 22 570 214 472 891 #[sup руб.]
+			p сумма размещенных займов.
+
+	section.recommend.bg-white
+		.container
+			h2 Рекомендованные
+			.swiper-container
+				.swiper-wrapper
+					.swiper-slide
+						a.recommend-item(href="#")
+							img(src="./images/recommend-1.jpg", alt="")
+							.recommend-text
+								p.recommend-title «Офисный центр»
+								.recommend-info.price
+									+svg("summ")
+									span 7 780 000 руб.
+								.recommend-info.percent
+									+svg("percent")
+									span 3.5%
+								.recommend-info.calendar
+									+svg("calendar")
+									span 3 месяца + 28 дней
+								.recommend-rating.rating-5
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+					.swiper-slide
+						a.recommend-item(href="#")
+							img(src="./images/recommend-1.jpg", alt="")
+							.recommend-text
+								p.recommend-title «Офисный центр»
+								.recommend-info.price
+									+svg("summ")
+									span 7 780 000 руб.
+								.recommend-info.percent
+									+svg("percent")
+									span 3.5%
+								.recommend-info.calendar
+									+svg("calendar")
+									span 3 месяца + 28 дней
+								.recommend-rating.rating-5
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+					.swiper-slide
+						a.recommend-item(href="#")
+							img(src="./images/recommend-2.jpg", alt="")
+							.recommend-text
+								p.recommend-title «Бизнес центр»
+								.recommend-info.price
+									+svg("summ")
+									span 7 780 000 руб.
+								.recommend-info.percent
+									+svg("percent")
+									span 3.5%
+								.recommend-info.calendar
+									+svg("calendar")
+									span 3 месяца + 28 дней
+								.recommend-rating.rating-4
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+					.swiper-slide
+						a.recommend-item(href="#")
+							img(src="./images/recommend-3.jpg", alt="")
+							.recommend-text
+								p.recommend-title «Участок»
+								.recommend-info.price
+									+svg("summ")
+									span 7 780 000 руб.
+								.recommend-info.percent
+									+svg("percent")
+									span 3.5%
+								.recommend-info.calendar
+									+svg("calendar")
+									span 3 месяца + 28 дней
+								.recommend-rating.rating-1
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+					.swiper-slide
+						a.recommend-item(href="#")
+							img(src="./images/recommend-4.jpg", alt="")
+							.recommend-text
+								p.recommend-title «Загородная недвижимость»
+								.recommend-info.price
+									+svg("summ")
+									span 7 780 000 руб.
+								.recommend-info.percent
+									+svg("percent")
+									span 3.5%
+								.recommend-info.calendar
+									+svg("calendar")
+									span 3 месяца + 28 дней
+								.recommend-rating.rating-4
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+					.swiper-slide
+						a.recommend-item(href="#")
+							img(src="./images/recommend-1.jpg", alt="")
+							.recommend-text
+								p.recommend-title «Офисный центр»
+								.recommend-info.price
+									+svg("summ")
+									span 7 780 000 руб.
+								.recommend-info.percent
+									+svg("percent")
+									span 3.5%
+								.recommend-info.calendar
+									+svg("calendar")
+									span 3 месяца + 28 дней
+								.recommend-rating.rating-5
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+					.swiper-slide
+						a.recommend-item(href="#")
+							img(src="./images/recommend-2.jpg", alt="")
+							.recommend-text
+								p.recommend-title «Бизнес центр»
+								.recommend-info.price
+									+svg("summ")
+									span 7 780 000 руб.
+								.recommend-info.percent
+									+svg("percent")
+									span 3.5%
+								.recommend-info.calendar
+									+svg("calendar")
+									span 3 месяца + 28 дней
+								.recommend-rating.rating-2
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+					.swiper-slide
+						a.recommend-item(href="#")
+							img(src="./images/recommend-3.jpg", alt="")
+							.recommend-text
+								p.recommend-title «Участок»
+								.recommend-info.price
+									+svg("summ")
+									span 7 780 000 руб.
+								.recommend-info.percent
+									+svg("percent")
+									span 3.5%
+								.recommend-info.calendar
+									+svg("calendar")
+									span 3 месяца + 28 дней
+								.recommend-rating.rating-1
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+					.swiper-slide
+						a.recommend-item(href="#")
+							img(src="./images/recommend-4.jpg", alt="")
+							.recommend-text
+								p.recommend-title «Загородная недвижимость»
+								.recommend-info.price
+									+svg("summ")
+									span 7 780 000 руб.
+								.recommend-info.percent
+									+svg("percent")
+									span 3.5%
+								.recommend-info.calendar
+									+svg("calendar")
+									span 3 месяца + 28 дней
+								.recommend-rating.rating-0
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+					.swiper-slide
+						a.recommend-item(href="#")
+							img(src="./images/recommend-2.jpg", alt="")
+							.recommend-text
+								p.recommend-title «Бизнес центр»
+								.recommend-info.price
+									+svg("summ")
+									span 7 780 000 руб.
+								.recommend-info.percent
+									+svg("percent")
+									span 3.5%
+								.recommend-info.calendar
+									+svg("calendar")
+									span 3 месяца + 28 дней
+								.recommend-rating.rating-2
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+					.swiper-slide
+						a.recommend-item(href="#")
+							img(src="./images/recommend-3.jpg", alt="")
+							.recommend-text
+								p.recommend-title «Участок»
+								.recommend-info.price
+									+svg("summ")
+									span 7 780 000 руб.
+								.recommend-info.percent
+									+svg("percent")
+									span 3.5%
+								.recommend-info.calendar
+									+svg("calendar")
+									span 3 месяца + 28 дней
+								.recommend-rating.rating-1
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+					.swiper-slide
+						a.recommend-item(href="#")
+							img(src="./images/recommend-4.jpg", alt="")
+							.recommend-text
+								p.recommend-title «Загородная недвижимость»
+								.recommend-info.price
+									+svg("summ")
+									span 7 780 000 руб.
+								.recommend-info.percent
+									+svg("percent")
+									span 3.5%
+								.recommend-info.calendar
+									+svg("calendar")
+									span 3 месяца + 28 дней
+								.recommend-rating.rating-0
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+									+svg("star-rating")
+
+			.swiper-navigation
+				.swiper-buttons.d-none.d-lg-flex
+					.swiper-button.prev
+						+svg("arrow-left")
+					.swiper-button.next
+						+svg("arrow-right")
+				.swiper-pagination.d-lg-none
+				a(href="#") Смотреть все
+
+	section.map
+		.container
+			h2 Поиск по карте
+			p Здесь должен быть какой-то текст
+
+			.map-block.mt-5
+				#map
+				a.btn.btn-primary.btn-sm.text-uppercase(href="#") Найти на карте
+
+	section.listings.bg-white
+		.container
+			h2 Новые объявления
+
+			.row
+				.col-xl-3.col-lg-4.col-sm-4.align-items-end.d-none.d-sm-flex.flex-column.order-sm-0
+					.listings-slider-thumbs.swiper-container
+						.swiper-wrapper
+							.listings-slide.swiper-slide
+								.listings-slider-photo
+									img(src="./images/listings-photo-1.jpg", alt="")
+							.listings-slide.swiper-slide
+								.listings-slider-photo
+									img(src="./images/listings-photo-2.jpg", alt="")
+							.listings-slide.swiper-slide
+								.listings-slider-photo
+									img(src="./images/listings-photo-3.jpg", alt="")
+					.swiper-navigation.d-none.d-md-flex
+						.swiper-buttons.d-none.d-lg-flex
+							.swiper-button.prev
+								+svg("arrow-left")
+							.swiper-button.next
+								+svg("arrow-right")
+						.swiper-pagination.d-lg-none
+						a(href="#") Смотреть все
+				.col-xl-9.col-lg-8.col-sm-8.d-flex.align-items-end.order-sm-2
+					.listings-slider.swiper-container
+						.swiper-wrapper
+							.listings-slider-item.swiper-slide
+								.listings-slider-card.card.d-flex.align-items-center.order-sm-2
+									.card-body
+										p.announcement-title «Офисный центр»
+										.announcement-info.price
+											+svg("summ")
+											b 7 780 000 руб.
+										.announcement-info.percent
+											+svg("percent")
+											small займа: 
+											b 3.5%
+										.announcement-info.calendar
+											+svg("calendar")
+											small срок займа: 
+											b 3&nbsp;месяца + 28&nbsp;дней
+										.announcement-rating.rating-5
+											+svg("star-rating")
+											+svg("star-rating")
+											+svg("star-rating")
+											+svg("star-rating")
+											+svg("star-rating")
+
+										.announcement-more
+											a(href="#")
+												+svg("arrow-right-long")
+								.listings-slider-photo.d-flex.align-items-end.order-sm-1
+									img(src="./images/listings-photo-1.jpg", alt="")
+							.listings-slider-item.swiper-slide
+								.listings-slider-card.card.d-flex.align-items-center.order-sm-2
+									.card-body
+										p.announcement-title «Офисный центр 1»
+										.announcement-info.price
+											+svg("summ")
+											b 7 780 000 руб.
+										.announcement-info.percent
+											+svg("percent")
+											small займа: 
+											b 3.5%
+										.announcement-info.calendar
+											+svg("calendar")
+											small срок займа: 
+											b 3&nbsp;месяца + 28&nbsp;дней
+										.announcement-rating.rating-5
+											+svg("star-rating")
+											+svg("star-rating")
+											+svg("star-rating")
+											+svg("star-rating")
+											+svg("star-rating")
+
+										.announcement-more
+											a(href="#")
+												+svg("arrow-right-long")
+								.listings-slider-photo.d-flex.align-items-end.order-sm-1
+									img(src="./images/listings-photo-2.jpg", alt="")
+							.listings-slider-item.swiper-slide
+								.listings-slider-card.card.d-flex.align-items-center.order-sm-2
+									.card-body
+										p.announcement-title «Офисный центр»
+										.announcement-info.price
+											+svg("summ")
+											b 7 780 000 руб.
+										.announcement-info.percent
+											+svg("percent")
+											small займа: 
+											b 3.5%
+										.announcement-info.calendar
+											+svg("calendar")
+											small срок займа: 
+											b 3&nbsp;месяца + 28&nbsp;дней
+										.announcement-rating.rating-5
+											+svg("star-rating")
+											+svg("star-rating")
+											+svg("star-rating")
+											+svg("star-rating")
+											+svg("star-rating")
+
+										.announcement-more
+											a(href="#")
+												+svg("arrow-right-long")
+								.listings-slider-photo.d-flex.align-items-end.order-sm-1
+									img(src="./images/listings-photo-3.jpg", alt="")
+				.col-sm-12.order-sm-3
+					.swiper-navigation.d-md-none
+						.swiper-buttons.d-none.d-lg-flex
+							.swiper-button.prev
+								+svg("arrow-left")
+							.swiper-button.next
+								+svg("arrow-right")
+						.swiper-pagination.d-lg-none
+						a(href="#") Смотреть все
+
+						
+			//- .row
+			//- 	.col-xl-3.col-lg-4.col-sm-4.align-items-end.d-none.d-sm-flex.flex-column.order-sm-0
+			//- 		.listings-slider-thumbs
+			//- 			.listings-slide
+			//- 				.listings-slider-photo
+			//- 					img(src="./images/listings-photo-1.jpg", alt="")
+			//- 			.listings-slide
+			//- 				.listings-slider-photo
+			//- 					img(src="./images/listings-photo-2.jpg", alt="")
+			//- 			.listings-slide
+			//- 				.listings-slider-photo
+			//- 					img(src="./images/listings-photo-3.jpg", alt="")
+			//- 		.swiper-navigation.d-none.d-md-flex
+			//- 			.swiper-buttons.d-none.d-lg-flex
+			//- 				.swiper-button.prev
+			//- 					+svg("arrow-left")
+			//- 				.swiper-button.next
+			//- 					+svg("arrow-right")
+			//- 			.swiper-pagination.d-lg-none
+			//- 			a(href="#") Смотреть все
+			//- 	.col-xl-9.col-lg-8.col-sm-8.d-flex.align-items-end.order-sm-2
+			//- 		.listings-slider
+			//- 			.listings-slider-item
+			//- 				.listings-slider-card.card.d-flex.align-items-center.order-sm-2
+			//- 					.card-body
+			//- 						p.announcement-title «Офисный центр»
+			//- 						.announcement-info.price
+			//- 							+svg("summ")
+			//- 							b 7 780 000 руб.
+			//- 						.announcement-info.percent
+			//- 							+svg("percent")
+			//- 							small займа: 
+			//- 							b 3.5%
+			//- 						.announcement-info.calendar
+			//- 							+svg("calendar")
+			//- 							small срок займа: 
+			//- 							b 3&nbsp;месяца + 28&nbsp;дней
+			//- 						.announcement-rating.rating-5
+			//- 							+svg("star-rating")
+			//- 							+svg("star-rating")
+			//- 							+svg("star-rating")
+			//- 							+svg("star-rating")
+			//- 							+svg("star-rating")
+
+			//- 						.announcement-more
+			//- 							a(href="#")
+			//- 								+svg("arrow-right-long")
+			//- 				.listings-slider-photo.d-flex.align-items-end.order-sm-1
+			//- 					img(src="./images/listings-photo-1.jpg", alt="")
+			//- 			.listings-slider-item
+			//- 				.listings-slider-card.card.d-flex.align-items-center.order-sm-2
+			//- 					.card-body
+			//- 						p.announcement-title «Офисный центр»
+			//- 						.announcement-info.price
+			//- 							+svg("summ")
+			//- 							b 7 780 000 руб.
+			//- 						.announcement-info.percent
+			//- 							+svg("percent")
+			//- 							small займа: 
+			//- 							b 3.5%
+			//- 						.announcement-info.calendar
+			//- 							+svg("calendar")
+			//- 							small срок займа: 
+			//- 							b 3&nbsp;месяца + 28&nbsp;дней
+			//- 						.announcement-rating.rating-5
+			//- 							+svg("star-rating")
+			//- 							+svg("star-rating")
+			//- 							+svg("star-rating")
+			//- 							+svg("star-rating")
+			//- 							+svg("star-rating")
+
+			//- 						.announcement-more
+			//- 							a(href="#")
+			//- 								+svg("arrow-right-long")
+			//- 				.listings-slider-photo.d-flex.align-items-end.order-sm-1
+			//- 					img(src="./images/listings-photo-2.jpg", alt="")
+			//- 			.listings-slider-item
+			//- 				.listings-slider-card.card.d-flex.align-items-center.order-sm-2
+			//- 					.card-body
+			//- 						p.announcement-title «Офисный центр»
+			//- 						.announcement-info.price
+			//- 							+svg("summ")
+			//- 							b 7 780 000 руб.
+			//- 						.announcement-info.percent
+			//- 							+svg("percent")
+			//- 							small займа: 
+			//- 							b 3.5%
+			//- 						.announcement-info.calendar
+			//- 							+svg("calendar")
+			//- 							small срок займа: 
+			//- 							b 3&nbsp;месяца + 28&nbsp;дней
+			//- 						.announcement-rating.rating-5
+			//- 							+svg("star-rating")
+			//- 							+svg("star-rating")
+			//- 							+svg("star-rating")
+			//- 							+svg("star-rating")
+			//- 							+svg("star-rating")
+
+			//- 						.announcement-more
+			//- 							a(href="#")
+			//- 								+svg("arrow-right-long")
+			//- 				.listings-slider-photo.d-flex.align-items-end.order-sm-1
+			//- 					img(src="./images/listings-photo-3.jpg", alt="")
+			//- 	.col-sm-12.order-sm-3
+			//- 		.swiper-navigation.d-md-none
+			//- 			.swiper-buttons.d-none.d-lg-flex
+			//- 				.swiper-button.prev
+			//- 					+svg("arrow-left")
+			//- 				.swiper-button.next
+			//- 					+svg("arrow-right")
+			//- 			.swiper-pagination.d-lg-none
+			//- 			a(href="#") Смотреть все
+
+	section.confidence
+		.container
+			p Доверие более 200 + дальновидных компаний
+			.row.confidence-list.align-items-center.justify-content-between.text-center
+				.col
+					+svg("loreal")(width="165" height="44")
+				.col
+					+svg("HM")(width="96" height="64")
+				.col
+					+svg("pwc")(width="106" height="81")
+				.col
+					+svg("nike")(width="120" height="63")
+				.col
+					+svg("T-Mobile")(width="181" height="32")
+				.col
+					+svg("Hilton")(width="95" height="72")
+
+	section.reviews.bg-white
+		.container
+			h2 Отзывы о нас
+			.reviews-slider.swiper-container
+				.swiper-wrapper
+					.swiper-slide
+						.reviews-item
+							.row.align-items-center
+								.col-lg-3.col-md-4
+									.reviews-item-tag
+										p.chanspan Spot #[br]Group
+									.reviews-item-title.text-center 
+										b Благодарность за профессиональную работу
+								.col-lg-9.col-md-8
+									.reviews-item-head
+										.reviews-item-author 
+											span Иванов Арсений
+										.reviews-item-date 
+											span 20/04/2020
+										.reviews-item-text.text-center 
+											p Команда  —  профессиональная. С таким партнером комфортно работать: разрабатываются новые предложения, своевременно (в&nbsp;течении 24&nbsp;часов с&nbsp;момента запроса) предоставляется обратная связь, при необходимости осуществляется обучение со&nbsp;всеми необходимыми консультациями, оперативно разрабатываются выгодные схемы сотрудничества, потрясающе отзывчивый и&nbsp;воспитанный персонал. Результатом довольны.
+					.swiper-slide
+						.reviews-item
+							.row.align-items-center
+								.col-lg-3.col-md-4
+									.reviews-item-tag
+										p.chanspan Spot #[br]Group
+									.reviews-item-title.text-center 
+										b Благодарность за профессиональную работу
+								.col-lg-9.col-md-8
+									.reviews-item-head
+										.reviews-item-author 
+											span Иванов Арсений
+										.reviews-item-date 
+											span 20/04/2020
+										.reviews-item-text.text-center 
+											p 123
+					.swiper-slide
+						.reviews-item
+							.row.align-items-center
+								.col-lg-3.col-md-4
+									.reviews-item-tag
+										p.chanspan Spot #[br]Group
+									.reviews-item-title.text-center 
+										b Благодарность за профессиональную работу
+								.col-lg-9.col-md-8
+									.reviews-item-head
+										.reviews-item-author 
+											span Иванов Арсений
+										.reviews-item-date 
+											span 20/04/2020
+										.reviews-item-text.text-center 
+											p 345
+											
+			.swiper-navigation
+				.swiper-buttons.d-none.d-lg-flex
+					.swiper-button.prev
+						+svg("arrow-left")
+					.swiper-button.next
+						+svg("arrow-right")
+				.swiper-pagination.d-lg-none
+				a(href="#") Смотреть все
+
+	section.useful-links
+		.container
+			p Полезные ссылки
+			.useful-links-list
+				.useful-links-item
+					a(href="#") Квартиры
+				.useful-links-item
+					a(href="#") Загородная недвижимость
+				.useful-links-item
+					a(href="#") Коммерческая недвижимость
+			.useful-links-list
+				.useful-links-item
+					a(href="#") До 1 500 000 руб.
+				.useful-links-item
+					a(href="#") 1 500 000 - 5 000 000 руб.
+				.useful-links-item
+					a(href="#") 5 000 000 - 10 000 000 руб.
+				.useful-links-item
+					a(href="#") Свыше 10 млн.руб.
+

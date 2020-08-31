@@ -1,0 +1,189 @@
+.modal {
+  .btn {
+    min-width: 6.125rem;
+  }
+  &-buttons {
+    margin-top: 1.8125rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  hr { margin: .5rem 0 1rem; }
+  .changeCity {
+    cursor: pointer;
+    margin-bottom: 1.5625rem;
+    transition: all .25s ease-in-out;
+    &:last-child { margin-bottom: 0; }
+    &:hover,
+    &:focus,
+    &:active {
+      color: $green;
+    }
+  }
+  .modal-header {
+    position: relative;
+    border-bottom: 1px solid $cyan-4;
+    .close {
+      position: absolute;
+      top: 50%; right: 55px;
+      transform: translateY(-50%);
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .modal-footer {
+    border-top: 1px solid $cyan-4;
+  }
+  .close {
+    width: 2.25rem; height: 2.25rem;
+    margin-top: -4px;
+    margin-right: 18px;
+    font-weight: 400;
+    font-size: 40px;
+    color: $red;
+    border-radius: 50%;
+    background-color: $white;
+    opacity: 1;
+    outline: none!important;
+    box-shadow: 0px 10px 15px $color-box-shadow;
+    &:hover {
+      box-shadow: none
+    }
+  }
+
+  &#cityModal {
+    .modal-body {
+      padding: 2.125rem 1.6875rem 1.875rem;
+    }
+    b {
+      font-size: 1.125rem;
+      font-weight: 600;
+      letter-spacing: .7px;
+    }
+    .btn {
+      padding-left: 1.9375rem;
+      padding-right: 1.9375rem;
+    }
+  }
+
+  &#confirmationModal {
+    .modal-dialog {
+      max-width: 540px;
+    }
+  }
+
+  &#supportModal {
+    .modal-dialog {
+      max-width: 635px;
+      .modal-header {
+        padding: 40px 54px 22px 20px;
+        @media(max-width: 399px) {
+          padding-right: 110px;
+          padding-left: 1rem;
+          justify-content: flex-start !important;
+          h5 { text-align: center; min-width: 100%; }
+        }
+      }
+      .close {
+        font-size: 50px;
+        top: 58%;
+        width: 50px; height: 50px;
+        padding: 4px 0 0 2px;
+        @media(max-width: 399px) {
+          right: 1rem;
+        }
+      }
+      .modal-body {
+        padding: 1rem 46px 0;
+        .form-group {
+          margin-bottom: 24px;
+        }
+        @media(max-width: 399px) {
+          padding: 1rem 1rem 0;
+        }
+      }
+      .modal-footer {
+        padding: 14px 46px 30px;
+        display: block;
+        & > * { margin-top: 0; margin-bottom: 0; }
+        @media(max-width: 399px) {
+          padding: 1rem;
+          .btn-link {
+            margin-top: 15px;
+          }
+        }
+      }
+    }
+  }
+  &#supportSuccessModal {
+    .modal-dialog {
+      max-width: 730px;
+      .modal-header {
+        padding: 50px 1rem 22px;
+        text-align: center;
+        @media(max-width: 399px) {
+          padding-right: 80px;
+          padding-left: 1rem;
+        }
+      }
+      .close {
+        font-size: 50px;
+        top: 58%;
+        width: 50px; height: 50px;
+        padding: 4px 0 0 2px;
+        @media(max-width: 399px) {
+          right: 1rem;
+        }
+      }
+      .modal-footer {
+        padding: 15px 46px 34px;
+        display: block;
+        & > * { margin-top: 0; margin-bottom: 0; }
+        @media(max-width: 399px) {
+          padding: 1rem;
+        }
+      }
+    }
+  }
+  &#deactivationModal,
+  &#SMSconfirmationModal,
+  &#deactivationDoneModal {
+    .modal-dialog {
+      max-width: 730px;
+    }
+    .modal-header {
+      .close {
+        right: 20px;
+      }
+    }
+  }
+  &#SMSconfirmationModal {
+    .form-group label.col-form-label {
+      height: 50px;
+      justify-content: flex-end;
+    }
+    .modal-footer {
+      justify-content: space-around;
+      flex-wrap: nowrap;
+      @media (max-width: 480px) {
+        flex-wrap: wrap;
+      }
+      & > * { margin: 0; }
+      .btn.btn-primary {
+        width: 255px!important;
+        min-width: 255px;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .btn.btn-link {
+        width: auto!important;
+        min-width: 160px;
+        max-width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  }
+}

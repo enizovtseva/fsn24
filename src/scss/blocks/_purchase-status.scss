@@ -1,0 +1,94 @@
+.purchase-status {
+  .h4 {
+    font-weight: 400;
+    color: $blue-base;
+  }
+
+  .badge {
+    position: relative;
+    width: 160px; height: 58px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 20px;
+    color: $white;
+    border-radius: 30px;
+    &:after {
+      content: '';
+      position: absolute;
+      top: -4px; right: 5px;
+      width: 17px; height: 17px;
+      border: 2px solid $white;
+      border-radius: 50%;
+    }
+    &.badge-success {
+      &:after { background-color: $success; }
+    }
+    &.badge-cyan {
+      background-color: $cyan;
+      &:after { background-color: $cyan; }
+    }
+    &.badge-indigo {
+      background-color: $indigo;
+      &:after { background-color: $indigo; }
+    }
+    &.badge-blue {
+      background-color: $blue;
+      &:after { background-color: $blue; }
+    }
+
+    &.badge-danger {
+      width: 11px; height: 11px;
+      display: inline-block;
+      border-radius: 50%;
+      &:after { display: none; }
+    }
+  }
+
+  .card {
+    height: 100%;
+    @media (max-width: 399px) {
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+
+    h4 {
+      font-weight: 600;
+      font-size: 25px;
+      line-height: 21px;
+      text-align: center;
+      letter-spacing: 0.03em;
+      color: $blue-base;
+    }
+
+    ul {
+      max-width: 410px;
+      margin: 0 auto;
+      padding: 0;
+      list-style-type: none;
+      li + li { margin-top: 25px; }
+      li {
+        position: relative;
+        padding-left: 25px;
+        &:before {
+          content: url(../images/sprites/svg/check-green.svg);
+          position: absolute;
+          left: 0;
+          width: 14px;
+        }
+      }
+    }
+
+    .btn {
+      width: 350px;
+      max-width: 100%;
+      color: $white;
+      margin-left: 0;
+      &.btn-primary {
+        background-color: #2F80ED;
+      }
+    }
+  }
+}

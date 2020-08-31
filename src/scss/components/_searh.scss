@@ -1,0 +1,43 @@
+.searh {
+  border-radius: 60px;
+  @media (max-width: 799px) { background: transparent; box-shadow: none; }
+  .card-body {
+    padding: 30px 60px;
+    @media (max-width: 1199px) { padding: 20px 57px; }
+    @media (max-width: 1027px) { padding: 10px; }
+    @media (max-width: 799px) { padding: 0; }
+  }
+  &-form {
+    display: flex;
+    @media (max-width: 799px) { flex-direction: column; }
+    input {
+      padding-left: 70px;
+      background-image: url(../images/sprites/svg/search.svg);
+      background-repeat: no-repeat;
+      background-position: 38px 50%;
+      @media (max-width: 799px) {
+        border: 5px solid $white;
+        box-shadow: 0px 10px 25px rgba(28, 55, 97, 0.11);
+      }
+    }
+    .btn {
+      width: 255px;
+      min-width: 255px;
+      margin-left: 30px;
+      @media (max-width: 1199px) {
+        width: 210px;
+        min-width: 210px;
+      }
+      @media (max-width: 1027px) {
+        width: 200px;
+        min-width: 200px;
+      }
+      @media (max-width: 799px) {
+        width: 100%;
+        min-width: 100%;
+        margin-left: 0;
+        margin-top: 30px;
+      }
+    }
+  }
+}

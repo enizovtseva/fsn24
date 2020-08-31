@@ -1,0 +1,190 @@
+extends pug/base-lk
+
+append vars
+	- html.classList.push('page-lk')
+
+block content
+
+	section
+		.container
+			nav(aria-label="breadcrumb")
+				ol.breadcrumb
+					li.breadcrumb-item.active(aria-current="page")
+						+svg("user")(width="27" height="27")
+						| Мой профиль
+					li.breadcrumb-item.active(aria-current="page") Пользователи
+					
+	section.pt-20.pt-xl-0
+		.container
+			.row
+				.col-lg-4.col-sm-12
+					.row
+						.col-lg-12.col-md-6
+							.card.user-nav.mb-30
+								.card-body.pt-20.pr-10.pb-20.pl-10.pt-xl-25.pr-xl-30.pb-xl-15.pl-xl-30
+									ul.nav.flex-column
+										li.nav-item.mb-10
+											a.nav-link(href="/lk-personal-account.html") Мой профиль
+										li.nav-item.mb-10
+											a.nav-link(href="/lk-main-user.html") Пользователи
+										li.nav-item
+											a.nav-link.active(href="/lk-collateral-objects.html") Объекты залога
+										li.nav-item
+											a.nav-link(href="/lk-notifications.html") Уведомления 
+												span.badge.badge-pill.badge-danger 3
+										li.nav-item
+											a.nav-link(href="/lk-my-offers.html") Мои оферты
+										li.nav-item
+											a.nav-link(href="/lk-participation-in-offers.html") Участие в офертах
+												span.badge.badge-pill.badge-danger 1
+										li.nav-item
+											a.nav-link(href="/lk-counter-offers.html") Встречные предложения
+												span.badge.badge-pill.badge-danger 1
+										li.nav-item
+											a.nav-link(href="/lk-search-ads.html") Поиск объявлений
+								ul.list-group
+									li.list-group-item.border-right-0.border-left-0.pt-25.pb-30
+										a.btn.btn-secondary.w-100(href="/lk-personal-account-edit.html")
+											+svg("settings")(width="21" height="21")
+											| Настройки
+											
+				.col-lg-8.col-sm-12
+					.card.page-lk-users
+						.card-header
+							h5.card-title.m-0 Уведомления
+						.card-body.pt-0
+							.page-lk-users-notifications
+								.page-lk-users-notifications-item
+									.row.align-items-center
+										.col-10.col-md-11
+											.row.align-items-center
+												.col-md-3.text-md-right.order-md-1
+													small 20/04/2020
+												.col-md-9.order-md-0.mt-20.mt-md-0
+													.page-lk-users-notifications-title
+														+svg("notifications-fsn")
+														span ФСН 24 Поздравляет с днем рождения!
+										.col-2.col-md-1.text-right
+											a.more(data-toggle="collapse" href="#notifications-1" role="button" aria-expanded="false" aria-controls="notifications-1")
+												+svg("arrow-down-outline")(data-toggle="tooltip" data-placement="bottom" title='Еще')
+									.page-lk-users-notifications-object.collapse#notifications-1
+										b С днем рождения!
+										p #[small 20/04/2020, 02:03] #[em от: ФСН24]
+										.text-center
+											p
+												em С днем рождения, Иван Иванович!
+											p Желаем Вам здоровья и отличного настроения! Проводите больше времени с семьей, друзьями, путешествуя и занимаясь тем, что Вам нравится. А мы будем делать все, чтобы ФСН 24 занимало у Вас меньше времени и было легким и удобным.
+											p Всегда рядом с Вами, команда ФСН 24
+								.page-lk-users-notifications-item
+									.row.align-items-center
+										.col-10.col-md-11
+											.row.align-items-center
+												.col-md-3.text-md-right.order-md-1
+													small 20/04/2020
+												.col-md-9.order-md-0.mt-20.mt-md-0
+													.page-lk-users-notifications-title
+														+svg("notifications-other")
+														span Сохраненный поиск апартаменты
+										.col-2.col-md-1.text-right
+											a.more(data-toggle="collapse" href="#notifications-2" role="button" aria-expanded="false" aria-controls="notifications-2")
+												+svg("arrow-down-outline")(data-toggle="tooltip" data-placement="bottom" title='Еще')
+									.page-lk-users-notifications-object.collapse#notifications-2
+										b С днем рождения!
+										p #[small 20/04/2020, 02:03] #[em от: ФСН24]
+										.text-center
+											p
+												em С днем рождения, Иван Иванович!
+											p Желаем Вам здоровья и отличного настроения! Проводите больше времени с семьей, друзьями, путешествуя и занимаясь тем, что Вам нравится. А мы будем делать все, чтобы ФСН 24 занимало у Вас меньше времени и было легким и удобным.
+											p Всегда рядом с Вами, команда ФСН 24
+								.page-lk-users-notifications-item
+									.row.align-items-center
+										.col-10.col-md-11
+											.row.align-items-center
+												.col-md-3.text-md-right.order-md-1
+													small 20/04/2020
+												.col-md-9.order-md-0.mt-20.mt-md-0
+													.page-lk-users-notifications-title
+														+svg("notifications-failure")
+														span Отказ в заявке
+										.col-2.col-md-1.text-right
+											a.more(data-toggle="collapse" href="#notifications-3" role="button" aria-expanded="false" aria-controls="notifications-3")
+												+svg("arrow-down-outline")(data-toggle="tooltip" data-placement="bottom" title='Еще')
+									.page-lk-users-notifications-object.collapse#notifications-3
+										b С днем рождения!
+										p #[small 20/04/2020, 02:03] #[em от: ФСН24]
+										.text-center
+											p
+												em С днем рождения, Иван Иванович!
+											p Желаем Вам здоровья и отличного настроения! Проводите больше времени с семьей, друзьями, путешествуя и занимаясь тем, что Вам нравится. А мы будем делать все, чтобы ФСН 24 занимало у Вас меньше времени и было легким и удобным.
+											p Всегда рядом с Вами, команда ФСН 24
+								.page-lk-users-notifications-item
+									.row.align-items-center
+										.col-10.col-md-11
+											.row.align-items-center
+												.col-md-3.text-md-right.order-md-1
+													small 20/04/2020
+													.text-danger.d-none.d-md-block
+														span 2 450.00
+												.col-md-9.order-md-0.mt-20.mt-md-0
+													.page-lk-users-notifications-title
+														+svg("notifications-payment")
+														span Платеж проведен
+												.col-12.d-md-none.text-danger.mt-20
+													span 2 450.00
+										.col-2.col-md-1.text-right
+											a.more(data-toggle="collapse" href="#notifications-4" role="button" aria-expanded="false" aria-controls="notifications-4")
+												+svg("arrow-down-outline")(data-toggle="tooltip" data-placement="bottom" title='Еще')
+									.page-lk-users-notifications-object.collapse#notifications-4
+										b С днем рождения!
+										p #[small 20/04/2020, 02:03] #[em от: ФСН24]
+										.text-center
+											p
+												em С днем рождения, Иван Иванович!
+											p Желаем Вам здоровья и отличного настроения! Проводите больше времени с семьей, друзьями, путешествуя и занимаясь тем, что Вам нравится. А мы будем делать все, чтобы ФСН 24 занимало у Вас меньше времени и было легким и удобным.
+											p Всегда рядом с Вами, команда ФСН 24
+								.page-lk-users-notifications-item
+									.row.align-items-center
+										.col-10.col-md-11
+											.row.align-items-center
+												.col-md-3.text-md-right.order-md-1
+													small 20/04/2020
+												.col-md-9.order-md-0.mt-20.mt-md-0
+													.page-lk-users-notifications-title
+														+svg("notifications-other")
+														span Процесс обработки
+										.col-2.col-md-1.text-right
+											a.more(data-toggle="collapse" href="#notifications-5" role="button" aria-expanded="false" aria-controls="notifications-5")
+												+svg("arrow-down-outline")(data-toggle="tooltip" data-placement="bottom" title='Еще')
+									.page-lk-users-notifications-object.collapse#notifications-5
+										h5 1 - комнатная Квартира 74 кв.м свободной планировки Комфорт Класса в ЖК "Домашний"
+										b Общая информация: 
+										.row.mb-20
+											.col-md-6.mt-15
+												p Вторичка
+												p Площадь комнат: 18-18-12-10-4-2-10 м²
+												p Высота потолков: 2,9 м
+												p Высота потолков: 2,9 м
+											.col-md-6.mt-15
+												p Вид из окон: На улицу и двор
+												p Санузел: 2 раздельных
+												p Ремонт: Без ремонта
+										a(href="#") Подробнее о объекте
+														
+							.page-lk-users-navigation
+								.pt-10.pb-10
+									span Строки на странице:
+								.dropdown.pt-10.pb-10
+									button.btn.btn-link.dropdown-toggle#dropdownPagination(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 5
+									.dropdown-menu(aria-labelledby="dropdownPagination")
+										button.dropdown-item(type="button") 5
+										button.dropdown-item(type="button") 10
+										button.dropdown-item(type="button") 20
+										button.dropdown-item(type="button") 50
+								.d-inline-flex.align-items-center.pt-10.pb-10
+									span 1-10 из 10
+									.swiper-buttons.d-flex
+										a.swiper-button.prev(href="#")
+											+svg("arrow-left-small")
+										a.swiper-button.next(href="#")
+											+svg("arrow-right-small")
+

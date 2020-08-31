@@ -1,0 +1,17 @@
+extends pug/base-auth
+
+append vars
+	- html.classList.push('page-registration')
+
+block content
+	section.pt-60.pt-sm-80.pt-md-65.pt-lg-80.pt-xl-100.pb-55.pb-sm-60.pb-md-45.pb-xl-7
+		.container.text-center
+			.row.justify-content-center
+				.col-lg-8.col-sm-10
+					.card.envelope-2
+						.card-body.pt-30.pb-30.pl-15.pr-15.p-sm-60
+							.row.justify-content-center
+								.col-xl-7.col-lg-8.col-md-10.text-center
+									+svg("envelope-2")(width="124" height="116")
+									h5.mt-20.mt-xl-45.mb-40.mb-sm-35 Поздравляем! Твоя почта работает, а значит переходим к следующему этапу.
+									a.btn.btn-outline-success.btn-sm(href="#") Продолжить

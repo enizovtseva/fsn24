@@ -1,0 +1,40 @@
+.confidence {
+  padding-top: 3.25rem;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: $blue;
+  @media(max-width: 1199px) {
+    padding-bottom: 3.125rem;
+  }
+  @media(max-width: 1027px) {
+    padding-top: 56px;
+  }
+  @media(max-width: 799px) {
+    padding: 45px 0 40px;
+  }
+  &-list {
+    margin-top: 2.375rem;
+    @media(max-width: 1027px) {
+      margin-top: 33px;
+    }
+    @media(max-width: 799px) {
+      margin-top: 30px;
+    }
+
+    .col {
+      &:nth-last-child(1) {
+        text-align: right;
+        @media(max-width: 1199px) { display: none; }
+      }
+      &:nth-last-child(2) {
+        @media(max-width: 1027px) { display: none; }
+      }
+      &:nth-last-child(3) {
+        @media(max-width: 799px) { display: none; }
+      }
+      &:nth-last-child(4) {
+        @media(max-width: 399px) { display: none; }
+      }
+    }
+  }
+}

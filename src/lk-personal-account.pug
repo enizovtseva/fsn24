@@ -1,0 +1,125 @@
+extends pug/base-lk
+
+append vars
+	- html.classList.push('page-lk')
+
+block content
+
+	section
+		.container
+			nav(aria-label="breadcrumb")
+				ol.breadcrumb
+					li.breadcrumb-item.active(aria-current="page")
+						+svg("user")(width="27" height="27")
+						| Мой профиль
+	
+	section.pt-20.pt-xl-0
+		.container
+			.row
+				.col-lg-4.col-sm-12
+					.row
+						.col-lg-12.col-md-6
+							.card.user-sidebar.mb-30
+								.card-body.pt-30.pr-10.pb-25.pl-10.pt-xl-30.pr-xl-30.pb-xl-25.pl-xl-30
+									.user-head.pr-10.pl-10.pr-xl-0.pl-xl-0
+										.user-photo.photo-lg.mb-20.mb-xl-0.mr-xl-10
+											span.badge.badge-primary
+											span И
+										span Иванов Иван Иванович
+									.user-status
+										span Статус профиля:
+										span.badge.badge-lg.badge-pill.badge-primary.text-uppercase Стандарт
+									.user-rating
+										+svg("zap").mr-10(width="15" height="17")
+										span 4/5
+										.user-rating-scale.rating-4.ml-10
+											span
+											span
+											span
+											span
+											span
+									.user-balance
+										span Баланс счета: 
+										b 10 553 123.03 руб.
+								ul.list-group
+									li.list-group-item.border-right-0.border-left-0
+										button.btn.btn-secondary.w-100
+											+svg("help-circle")(width="13" height="13")
+											| Помощь
+									li.list-group-item.border-right-0.border-left-0.pb-25
+										button.btn.btn-outline-success.w-100
+											+svg("log-out")(width="15" height="14")
+											| Выход
+											
+						.col-lg-12.col-md-6
+							.card.user-nav.mb-30
+								.card-body.pt-20.pr-10.pb-20.pl-10.pt-xl-25.pr-xl-30.pb-xl-15.pl-xl-30
+									ul.nav.flex-column
+										li.nav-item.mb-10
+											a.nav-link(href="/lk-personal-account.html") Мой профиль
+										li.nav-item.mb-10
+											a.nav-link.active(href="/lk-main-user.html") Пользователи
+										li.nav-item
+											a.nav-link(href="/lk-collateral-objects.html") Объекты залога
+										li.nav-item
+											a.nav-link(href="/lk-notifications.html") Уведомления 
+												span.badge.badge-pill.badge-danger 3
+										li.nav-item
+											a.nav-link(href="/lk-my-offers.html") Мои оферты
+										li.nav-item
+											a.nav-link(href="/lk-participation-in-offers.html") Участие в офертах
+												span.badge.badge-pill.badge-danger 1
+										li.nav-item
+											a.nav-link(href="/lk-counter-offers.html") Встречные предложения
+												span.badge.badge-pill.badge-danger 1
+										li.nav-item
+											a.nav-link(href="/lk-search-ads.html") Поиск объявлений
+								ul.list-group
+									li.list-group-item.border-right-0.border-left-0.pt-25.pb-30
+										a.btn.btn-secondary.w-100(href="/lk-personal-account-edit.html")
+											+svg("settings")(width="21" height="21")
+											| Настройки
+											
+				.col-lg-8.col-sm-12
+					.card.user-profile
+						.card-header
+							h3.card-title.m-0 Мой профиль
+						.card-body
+							form.form.needs-validation(novalidate)
+								.form-group.row.align-items-start
+									label.col-sm-4.col-form-label.pt-sm-0.pb-sm-0 Фамилия*
+									.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+										input.form-control(type="text" placeholder="Введите фамилию" value="Иванов" required)
+										.invalid-feedback Необходимо указать Вашу фамилию
+								.form-group.row.align-items-start
+									label.col-sm-4.col-form-label.pt-sm-0.pb-sm-0 Имя*
+									.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+										input.form-control(type="text" placeholder="Введите имя" value="Иван" required)
+										.invalid-feedback Необходимо указать Ваше имя
+								.form-group.row.align-items-start
+									label.col-sm-4.col-form-label.pt-sm-0.pb-sm-0 Отчество*
+									.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+										input.form-control(type="text" placeholder="Отчество" value="Иванович" required)
+										.invalid-feedback Необходимо указать Ваше отчество
+								.form-group.row.align-items-start
+									label.col-sm-4.col-form-label.pt-sm-0.pb-sm-0 Телефон*
+									.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+										input.form-control.phone-mask(type="tel" placeholder="+7(___) ___ __ __" value="+7(981) 536 56 54")
+										.invalid-feedback Значение Телефона неверно.
+										.text-success.mt-1.d-xl-none Подтвержденный номер
+									.col-md-3.pl-0.pr-0.d-none.d-xl-flex.align-items-center
+										.text-center.text-success Подтвержденный номер
+								.form-group.row.align-items-start
+									label.col-sm-4.col-form-label.pt-sm-0.pb-sm-0 День рождения
+									.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+										input.form-control.datepicker(type="text" placeholder="Выберите день рождения..." value="11.10.1991")
+								.form-group.row.align-items-start
+									label.col-sm-4.col-form-label.pt-sm-0.pb-sm-0 E-mail
+									.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+										input.form-control(type="email" placeholder="Введите e-mail" value="122336@mail.ru")
+										.invalid-feedback Необходимо заполнить Email.
+								
+								.form-group.row.align-items-start.mt-40.justify-content-center
+									.col-md-7.pl-10.pr-10
+										a.btn.btn-outline-success.w-100(href="/lk-personal-account-edit.html") Редактировать
+

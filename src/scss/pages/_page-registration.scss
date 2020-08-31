@@ -1,0 +1,92 @@
+.page-registration {
+  @media(max-width: 399px) {
+    .btn {
+      width: 100%;
+    }
+  }
+
+  .card {
+    position: relative;
+    @media(max-width: 399px) {
+      margin: 0 -15px;
+      border-radius: 0;
+    }
+    .sheets {
+      position: absolute;
+      top: -67px; right: -86px;
+    }
+    .sheets-2 {
+      position: absolute;
+      left: -94px; bottom: -80px;
+      & ~ .card-body {
+        position: relative;
+        z-index: 1;
+        background-color: $white;
+      }
+    }
+    .card-header {
+      border-radius: 5px 5px 0 0;
+    }
+    .card-body {
+      border-radius: 0 0 5px 5px;
+    }
+
+    &.envelope-2 {
+      h5 {
+        line-height: 1.3;
+        color: $blue-base;
+      }
+    }
+  }
+
+  .card-form {
+    .card-header {
+      padding: 20px 16px;
+      h4 { font-size: 25px; }
+    }
+    .card-body {
+      padding: 24px 36px 30px;
+      .form {
+        .col-form-label { font-weight: 700; text-align: left; }
+        .form-group { margin-bottom: 20px; }
+      }
+    }
+    @media(max-width: 399px) {
+      .card-body {
+        padding: 24px 16px 30px;
+      }
+    }
+  }
+
+  .modal-dialog {
+    margin: 1.75rem auto;
+
+    .tool-tip {
+      left: 30px; top: 50%;
+      transform: translateY(-50%);
+      @media(max-width: 399px) {
+        left: 20px; top: 40px;
+        transform: none;
+      }
+    }
+    @media(max-width: 399px) {
+      .position-relative {
+        position: static !important;
+      }
+    }
+  }
+
+  .help-link {
+    color: $green;
+    svg { margin-right: 10px; }
+  }
+  .link {
+    color: $cyan;
+    margin: 30px 0 20px;
+    a {
+      margin: 0 5px;
+      &:first-child { margin-left: 0; }
+      &:last-child { margin-right: 0; }
+    }
+  }
+}

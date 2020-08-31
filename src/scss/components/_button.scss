@@ -1,0 +1,80 @@
+.btn {
+  min-width: 10.25rem;
+
+  @media(max-width: 1199px) {
+    min-width: 8.125rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  @media(max-width: 799px) {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  svg { transition: all .25s ease-in-out; }
+  &.btn-sm {
+    min-width: 15.875rem;
+    @media(max-width: 1199px) {
+      min-width: 13.125rem;
+    }
+    @media(max-width: 799px) {
+      min-width: 195px;
+    }
+  }
+
+  &-primary {
+    color: $white !important;
+  }
+
+  &.btn-outline {
+    &-success {
+      color: $blue-base;
+      svg { stroke: $blue-base; }
+    }
+  }
+}
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    @include button-variant($value, $value, $value, $value, $value, $value);
+
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      box-shadow: $btn-focus-box-shadow;
+    }
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    .show > &.dropdown-toggle {
+      &:focus {
+        box-shadow: $btn-focus-box-shadow;
+      }
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color} {
+    @include button-outline-variant($value, $white, $value, $value);
+
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      box-shadow: $btn-focus-box-shadow;
+      svg { stroke: $white; }
+    }
+
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    .show > &.dropdown-toggle {
+      &:focus {
+        box-shadow: $btn-focus-box-shadow;
+        svg { stroke: $white; }
+      }
+    }
+  }
+}

@@ -1,0 +1,100 @@
+extends pug/base-lk
+
+append vars
+	- html.classList.push('page-lk')
+
+block content
+
+	section
+		.container
+			nav(aria-label="breadcrumb")
+				ol.breadcrumb
+					li.breadcrumb-item
+						a(href="/lk-personal-account.html")
+							+svg("user")(width="27" height="27")
+							| Мой профиль
+					li.breadcrumb-item
+						a(href="/lk-settings-notifications.html") Настройки
+					li.breadcrumb-item.active(aria-current="page") Безопасность
+	
+	section.pt-20.pt-xl-0
+		.container
+			.row
+				.col-lg-4.col-sm-12
+					.row
+						.col-lg-12.col-md-6
+							.card.user-sidebar.mb-30
+								ul.list-group.text-center
+									li.list-group-item.pt-25.pb-30.border-right-0.border-left-0
+										a.text-blue(href="/lk-settings-notifications.html") Рассылки
+									li.list-group-item.pt-30.pb-35.border-right-0.border-left-0
+										a.text-success(href="/lk-settings-safety.html") Безопасность
+									li.list-group-item.pt-30.pb-25.border-right-0.border-left-0
+										a.text-danger(href="/lk-settings-deactivation.html") Деактивация аккаунта
+											
+						.col-lg-12.col-md-6
+							.card.user-nav.mb-30
+								.card-body.pt-20.pr-10.pb-20.pl-10.pt-xl-25.pr-xl-30.pb-xl-15.pl-xl-30
+									ul.nav.flex-column
+										li.nav-item.mb-10
+											a.nav-link(href="/lk-personal-account.html") Мой профиль
+										li.nav-item.mb-10
+											a.nav-link.active(href="/lk-main-user.html") Пользователи
+										li.nav-item
+											a.nav-link(href="/lk-collateral-objects.html") Объекты залога
+										li.nav-item
+											a.nav-link(href="/lk-notifications.html") Уведомления 
+												span.badge.badge-pill.badge-danger 3
+										li.nav-item
+											a.nav-link(href="/lk-my-offers.html") Мои оферты
+										li.nav-item
+											a.nav-link(href="/lk-participation-in-offers.html") Участие в офертах
+												span.badge.badge-pill.badge-danger 1
+										li.nav-item
+											a.nav-link(href="/lk-counter-offers.html") Встречные предложения
+												span.badge.badge-pill.badge-danger 1
+										li.nav-item
+											a.nav-link(href="/lk-search-ads.html") Поиск объявлений
+								ul.list-group
+									li.list-group-item.border-right-0.border-left-0.pt-25.pb-30
+										a.btn.btn-secondary.w-100(href="/lk-personal-account-edit.html")
+											+svg("settings")(width="21" height="21")
+											| Настройки
+											
+				.col-lg-8.col-sm-12
+					form.card.user-profile
+						.card-header
+							h3.card-title.m-0.text-center.w-100 Безопасность
+						.card-body.text-center
+							form.page-lk-safety.form.needs-validation(novalidate)
+								.page-lk-safety-container
+									.custom-control.custom-checkbox
+										input.custom-control-input#Newsletter(type="checkbox" value="")
+										label.custom-control-label(for="Newsletter") Использовать Google Authenticator
+									.form-group.row.align-items-stretch
+										label.col-md-2.col-12.col-form-label.pt-sm-0.pb-sm-0 Ключ
+										.col-xl-6.col-lg-7.col-md-6.pr-md-0.pr-xl-10.pl-xl-0
+											input.form-control(type="tel" placeholder="5365654" value="5365654")
+										.col-xl-4.offset-xl-0.col-lg-7.offset-lg-2.col-md-4.mt-10.mt-md-0.mt-lg-10.mt-xl-0.pl-xl-10.d-flex.align-items-center.justify-content-center.justify-content-md-start
+											.text-center 
+												+svg("copy")(width="20" height="19" fill="transparent")
+												span Скопировать
+								.form-group.row.align-items-start.mt-40.justify-content-center
+									.col-sm-5.pl-sm-0
+										button.btn.btn-danger.w-100(type="submit") Сохранить
+									.col-sm-5.mt-15.mt-sm-0.pr-sm-0
+										button.btn.btn-primary.w-100(type="button" data-toggle="modal" data-target="#UpdateKeyModal") Обновить ключ
+
+					.modal.fade#UpdateKeyModal(tabindex="-1" role="dialog" aria-labelledby="UpdateKeyModal" aria-hidden="true")
+						.modal-dialog
+							.modal-content
+								.modal-header.justify-content-center
+									h5.m-0 Обновить ключ
+									button.close(type="button" data-dismiss="modal" aria-label="Close")
+										span(aria-hidden="true") &times;
+								.modal-body.pt-50.pb-50.text-center
+									p.mb-0 *Вы хотите обновить ключ? Ваш старый ключ будет недействительным.
+								.modal-footer.justify-content-center
+									.col-sm-6.m-0
+										button.btn.btn-primary.btn-sm.w-100.text-uppercase(type="button" data-dismiss="modal") Обновить
+

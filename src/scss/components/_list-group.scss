@@ -1,0 +1,8 @@
+.list-group {
+  &-item {
+    @media(max-width: 1199px) {
+      padding-left: 13px;
+      padding-right: 13px;
+    }
+  }
+}

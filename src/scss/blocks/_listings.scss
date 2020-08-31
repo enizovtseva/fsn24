@@ -1,0 +1,341 @@
+.listings {
+  overflow: hidden;
+  @media(max-width: 1199px) {
+    padding: 2.8125rem 0;
+  }
+  @media(max-width: 799px) {
+    padding: 36px 0;
+  }
+
+  &-slider-thumbs {
+    width: 100%;
+    overflow: hidden;
+    height: 392px;
+    @media(max-width: 1199px) { height: 416px; }
+    @media(max-width: 1027px) { height: 315px; }
+    @media(max-width: 799px) { height: 290px; }
+    @media(max-width: 399px) { height: 252px; }
+
+    .slick-dots,
+    .slick-arrow { display: none !important; }
+    .slick-list {
+      height: 392px !important;
+      margin: -15px 0 0;
+      @media(max-width: 1199px) {
+        height: 415px !important;
+      }
+      @media(max-width: 1027px) {
+        height: 364px !important;
+      }
+      @media(max-width: 799px) {
+        height: 382px !important;
+      }
+      @media(max-width: 399px) {
+        display: none !important;
+      }
+    }
+    .listings-slide {
+      width: 100% !important;
+      display: flex;
+      justify-content: flex-end;
+      //padding: 15px 0;
+      width: 100%; height: 208px;
+      @media(max-width: 1199px) { height: 222px; }
+      @media(max-width: 1027px) { width: 100%; height: 167px; }
+      @media(max-width: 799px) { height: 176px; }
+      .listings-slider-photo {
+        width: 100%; height: 100%;
+        // @media(max-width: 1199px) { height: 222px; }
+        // @media(max-width: 1027px) { width: 100%; height: 167px; }
+        // @media(max-width: 799px) { height: 176px; }
+      }
+      &.slick-current,
+      &.swiper-slide-active {
+        height: 154px;
+        .listings-slider-photo {
+          width: 10rem; height: 100%;
+          max-width: 76%;
+          margin-left: auto;
+          @media(max-width: 1199px) { width: 210px; height: 163px; max-width: 100%; }
+          @media(max-width: 1027px) { width: 100%; height: 137px; }
+          @media(max-width: 799px) { height: 146px; }
+        }
+      }
+    }
+  }
+
+  &-slider {
+    width: 100%; height: 100%;
+    overflow: hidden;
+    @media(max-width: 1027px) {
+      height: 100%;
+    }
+    @media(max-width: 399px) {
+      height: 360px;
+    }
+    .slick-list { height: 100%; }
+    .listings-slider-item { & > div:not([class]) { height: 100%; } }
+    .slick-track,
+    .listings-slider-item {
+      height: 100%;
+
+      .listings-slider-photo {
+        width: 445px; height: 100%; //height: 458px;
+        @media(max-width: 1199px) {
+          width: 450px; //height: 482px;
+        }
+        @media(max-width: 1027px) {
+          width: 100%; height: 315px;
+          margin-top: auto;
+        }
+        @media(max-width: 799px) {
+          //height: 290px;
+        }
+        @media(max-width: 399px) {
+          //height: 252px;
+        }
+      }
+    }
+    &-item {
+      transition: all 1s ease-in-out;
+      position: relative;
+      background-color: $white;
+      display: flex!important;
+      align-items: center;
+      @media(max-width: 1027px) {
+        height: 100%;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+    }
+    &-photo {
+      position: relative;
+      border-radius: 5px;
+      overflow: hidden;
+      img {
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 100%; min-height: 100%;
+      }
+      // &.photo-1 {
+      //   width: 100%; height: 100%;
+      //   @media(max-width: 1027px) {
+      //     height: 19.75rem;
+      //     margin-top: auto;
+      //   }
+      //   @media(max-width: 799px) {
+      //     height: 290px;
+      //   }
+      //   @media(max-width: 399px) {
+      //     height: 252px;
+      //   }
+      // }
+      // &.photo-2 {
+      //   width: 10rem; height: 9.625rem;
+      //   max-width: 76%;
+      //   @media(max-width: 1199px) {
+      //     width: 13.125rem; height: 10.25rem;
+      //     max-width: 100%;
+      //   }
+      //   @media(max-width: 1027px) {
+      //     width: 100%; height: 10.46875rem;
+      //   }
+      //   @media(max-width: 799px) {
+      //     height: 176px;
+      //   }
+      // }
+      // &.photo-3 {
+      //   width: 100%; height: 13rem;
+      //   @media(max-width: 1199px) {
+      //     height: 13.875rem;
+      //   }
+      //   @media(max-width: 1027px) {
+      //     width: 100%; height: 10.46875rem;
+      //   }
+      //   @media(max-width: 799px) {
+      //     height: 176px;
+      //   }
+      // }
+    }
+    &-card {
+      position: absolute;
+      right: 0;
+      z-index: 1;
+      width: 445px;
+      .card-body { position: relative; padding: 24px 85px 22px; }
+      @media(max-width: 1199px) {
+        width: 370px;
+        .card-body { padding: 24px 47px 22px; }
+      }
+      @media(max-width: 1027px) {
+        left: auto; right: auto; top: 0;
+        width: 330px;
+        .card-body { padding: 16px 47px 20px; }
+      }
+      @media(max-width: 799px) {
+        width: 285px;
+      }
+      @media(max-width: 399px) {
+        width: 100%;
+        .card-body { padding: 16px 26px 20px; }
+      }
+    }
+  }
+  .swiper-container {
+    width: 100%;
+    margin: 0;
+  }
+  .swiper-navigation {
+    width: 100%;
+    margin-top: 1.5rem;
+    @media(max-width: 1199px) {
+      margin-top: 1.625rem;
+    }
+    @media(max-width: 799px) {
+      margin-top: 35px;
+    }
+    @media(max-width: 399px) {
+      margin-top: 18px;
+    }
+  }
+}
+
+.announcement {
+  &-title {
+    margin-bottom: 1.5rem;
+    padding-left: 0;
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-align: center;
+    color: $blue;
+    @media(max-width: 1027px) {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+    @media(max-width: 799px) {
+      margin-bottom: 21px;
+    }
+    @media(max-width: 399px) {
+      margin-bottom: 5px;
+    }
+  }
+  &-info {
+    margin-top: 1.5rem;
+    display: flex;
+    @media(max-width: 1027px) {
+      margin-top: 22px;
+    }
+    @media(max-width: 799px) {
+      letter-spacing: 0;
+      margin-top: 17px;
+    }
+    @media(max-width: 399px) {
+      display: inline-block;
+      font-size: 14px;
+      & + & { margin-left: 21px; }
+    }
+    svg {
+      width: 1.5rem; height: 1.5rem;
+      min-width: 1.5rem;
+      margin-right: 10px;
+      vertical-align: middle;
+      @media(max-width: 1027px) {
+        width: 22px; height: 22px;
+        min-width: 22px;
+        margin-bottom: 2px;
+      }
+    }
+    &.price {
+      svg { fill: $green; }
+    }
+    &.percent {
+      svg { fill: $cyan-2; }
+    }
+    &.calendar {
+      svg { fill: $red; }
+    }
+    small {
+      margin-right: 5px;
+      font-size: 14px;
+      line-height: 24px;
+      color: $cyan-2;
+      white-space: nowrap;
+      @media(max-width: 799px) {
+        display: none;
+      }
+    }
+  }
+  &-rating {
+    margin-top: 1.75rem;
+    text-align: center;
+    @media(max-width: 1027px) {
+      margin-top: 20px;
+      text-align: left;
+    }
+    @media(max-width: 799px) {
+      margin-top: 17px;
+    }
+    svg {
+      width: 21px; height: 21px;
+      margin: 0 6px;
+      fill: $green;
+      stroke: transparent;
+      @media(max-width: 799px) {
+        width: 17px; height: 17px;
+        margin: 0 5px;
+        &:first-child { margin-left: 0; }
+        &:last-child { margin-right: 0; }
+      }
+    }
+    &.rating-0 {
+      svg {
+        fill: transparent;
+        stroke: $green;
+      }
+    }
+    &.rating-1 {
+      svg:nth-child(n + 2) {
+        fill: transparent;
+        stroke: $green;
+      }
+    }
+    &.rating-2 {
+      svg:nth-child(n + 3) {
+        fill: transparent;
+        stroke: $green;
+      }
+    }
+    &.rating-3 {
+      svg:nth-child(n + 4) {
+        fill: transparent;
+        stroke: $green;
+      }
+    }
+    &.rating-4 {
+      svg:nth-child(n + 5) {
+        fill: transparent;
+        stroke: $green;
+      }
+    }
+    &.rating-5 {
+      svg:nth-child(n + 6) {
+        fill: transparent;
+        stroke: $green;
+      }
+    }
+  }
+  &-more {
+    margin-top: 1.5rem;
+    text-align: right;
+    svg { width: 48px; height: 18px; }
+    @media(max-width: 1027px) {
+      position: absolute;
+      right: 52px; bottom: 22px;
+    }
+    @media(max-width: 799px) {
+      right: 44px; bottom: 20px;
+      svg { width: 38px; }
+    }
+  }
+}

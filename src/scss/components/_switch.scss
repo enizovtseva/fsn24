@@ -1,0 +1,127 @@
+.custom-switch.custom {
+  position: relative;
+  padding: 0;
+
+  .custom-control-label {
+    position: static;
+    font-size: 14px;
+    line-height: 25px;
+    letter-spacing: .7px;
+    @media(max-width: 399px) {
+      font-size: 10px;
+    }
+    svg {
+      margin-bottom: 2px;
+    }
+    &:before {
+      top: 0; left: auto; right: 0;
+      width: 55px; height: 25px;
+      background: $gray-200;
+      border-radius: 30px;
+    }
+    &:after {
+      top: 0; left: auto; right: 30px;
+      width: 25px; height: 25px;
+      background: $blue-base;
+    }
+  }
+  .custom-control-input {
+    &:checked ~ .custom-control-label {
+      color: $blue-base;
+      &:after {
+        color: $white;
+        background-color: $blue-base;
+        transform: translateX(30px);
+      }
+      &:before {
+        background: $gray-200;
+        outline: none;
+      }
+    }
+    &:focus~.custom-control-label {
+      &:before {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+.custom-switch.lang {
+  width: 5.9rem; height: 1.5625rem;
+  padding: 0;
+  background-color: $gray-200;
+  border-radius: $custom-switch-indicator-border-radius;
+  // @media(max-width: 1199px) {
+  //   width: 5rem;
+  // }
+  @media(max-width: 799px) {
+    height: 30px;
+  }
+  .custom-control-label {
+    padding: .25rem .875rem;
+    font-size: 0.875rem;
+    color: $white;
+    text-align: right;
+    transition: color .15s ease-in-out;
+    // @media(max-width: 1199px) {
+    //   padding: .25rem 0.625rem;
+    // }
+    @media(max-width: 799px) {
+      padding: 6px .875rem;
+    }
+    &:after {
+      content: '';
+      top: 0; left: 0;
+      width: 3.2025rem;
+      color: $white;
+      background-color: $blue-base;
+      // @media(max-width: 1199px) {
+      //   width: 2.6875rem;
+      // }
+      @media(max-width: 799px) {
+        height: 30px;
+      }
+    }
+    &:before {
+      content: 'Eng';
+      top: 0; left: 0;
+      z-index: 2;
+      height: 1.5625rem;
+      padding: .25rem .625rem;
+      color: $blue-base;
+      border: none;
+      background-color: transparent;
+      transition: color .15s ease-in-out;
+      // @media(max-width: 1199px) {
+      //   width: 5rem;
+      //   padding: .25rem .5rem;
+      // }
+      @media(max-width: 799px) {
+        padding: 6px .625rem;
+      }
+    }
+    span {
+      position: relative;
+      z-index: 1;
+    }
+  }
+  .custom-control-input {
+    &:checked ~ .custom-control-label {
+      color: $blue-base;
+      &:after {
+        color: $white;
+        background-color: $blue-base;
+        transform: translateX(2.6925rem);
+      }
+      &:before {
+        background-color: transparent;
+        outline: none;
+      }
+    }
+    &:focus~.custom-control-label {
+      &:before {
+        box-shadow: none;
+      }
+    }
+  }
+}

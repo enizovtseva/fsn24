@@ -1,0 +1,30 @@
+.custom-radio {
+	.custom-control-label:after,
+	.custom-control-label:before {
+		outline: none!important;
+		box-shadow: none!important;
+	}
+	.custom-control-label:before {
+		width: 18px; height: 18px;
+		background: transparent;
+		border: 2px solid $blue;
+	}
+	.custom-control-label:after {
+		width: 10px; height: 10px;
+		background: $blue;
+		border-radius: 50%;
+		margin: 4px;
+		opacity: 0;
+	}
+	.custom-control-input:not(:disabled):active~.custom-control-label:before {
+		border: 2px solid $blue;
+	}
+	.custom-control-input:checked~.custom-control-label:before {
+		background: transparent;
+		border: 2px solid $blue;
+	}
+	.custom-control-input:checked~.custom-control-label:after {
+		opacity: 1;
+		background: $blue;
+	}
+}

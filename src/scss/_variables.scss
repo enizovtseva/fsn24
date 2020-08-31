@@ -1,0 +1,261 @@
+
+/* Custom vars */
+
+// COLORS
+$blue-base:        #35679A;
+$blue-box-shadow:  #1C3761;
+$blue-2:           #0043FF;
+$cyan-2:           #52A8E0;
+$cyan-3:           #E7F6FD;
+$cyan-4:           #EAF7FD;
+$light-2:          #EFF0F1;
+
+$color-box-shadow: rgba($color: $blue-box-shadow, $alpha: .11);
+
+// FONTS
+$font-family: 'ProximaNova', sans-serif;
+
+
+/* Bootstrap vars */
+
+$white:    #fff;
+$gray-100: #FBFDFF;
+$gray-200: #EEF6FC;
+$gray-300: #dee2e6;
+$gray-400: #C4C4C4;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000;
+
+$blue:    #223365;
+$indigo:  #2C4096;
+$purple:  #6f42c1;
+$pink:    #e83e8c;
+$red:     #E62C2E;
+$orange:  #fd7e14;
+$yellow:  #ffc107;
+$green:   #0AC789;
+$teal:    #20c997;
+$cyan:    #70C8F2;
+
+$primary:       $cyan;
+$secondary:     $gray-600;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $gray-100;
+$dark:          $gray-800;
+
+$spacer: 1rem;
+$spacer-sm: 0.3125rem;
+$spacers: ();
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .50),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 2.0),
+    6: ($spacer * 2.5),
+    7: ($spacer * 3.0),
+    8: ($spacer * 4.0),
+    9: ($spacer * 4.5),
+
+    10: ($spacer-sm * 2),
+    15: ($spacer-sm * 3),
+    20: ($spacer-sm * 4),
+    25: ($spacer-sm * 5),
+    30: ($spacer-sm * 6),
+    35: ($spacer-sm * 7),
+    40: ($spacer-sm * 8),
+    45: ($spacer-sm * 9),
+    50: ($spacer-sm * 10),
+    55: ($spacer-sm * 11),
+    60: ($spacer-sm * 12),
+    65: ($spacer-sm * 13),
+    70: ($spacer-sm * 14),
+    75: ($spacer-sm * 15),
+    80: ($spacer-sm * 16),
+    85: ($spacer-sm * 17),
+    90: ($spacer-sm * 18),
+    95: ($spacer-sm * 19),
+    100: ($spacer-sm * 20),
+  ),
+  $spacers
+);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 400px,
+  md: 800px,
+  lg: 1028px,
+  xl: 1200px
+);
+
+$body-bg:                     $light;
+$body-color:                  $blue-base;
+
+$font-family-base:            $font-family;
+
+$font-size-base:              1rem;
+$font-size-lg:                $font-size-base * 1.25;
+$font-size-sm:                $font-size-base * .875;
+
+$line-height-lg:              1.3;
+$line-height-sm:              1.3;
+$line-height-base:            1.3;
+
+$h1-font-size:                $font-size-base * 2.8125;
+$h2-font-size:                $font-size-base * 2.5;
+$h3-font-size:                $font-size-base * 1.75;
+$h4-font-size:                $font-size-base * 1.5;
+$h5-font-size:                $font-size-base * 1.25;
+$h6-font-size:                $font-size-base;
+
+$headings-margin-bottom:      $spacer * 1.75;
+$headings-font-weight:        700;
+$headings-line-height:        1.5;
+$headings-color:              $blue;
+
+$border-radius:               0.3125rem;
+$border-radius-lg:            0.3125rem;
+$border-radius-sm:            0.3125rem;
+
+$input-bg:                    $gray-200;
+$input-disabled-bg:           $gray-300;
+
+$input-color:                 $blue-base;
+$input-border-color:          transparent;
+$input-border-width:          0;
+$input-box-shadow:            none;
+
+$input-border-radius:         1.875rem;
+$input-border-radius-lg:      1.875rem;
+$input-border-radius-sm:      1.875rem;
+
+$input-placeholder-color:     rgba($color: $blue-base, $alpha: .8);
+
+$btn-border-radius:           1.875rem;
+$btn-border-radius-lg:        1.875rem;
+$btn-border-radius-sm:        1.875rem;
+$btn-box-shadow:              none;
+$btn-focus-box-shadow:        0px 6px 10px rgba(28, 55, 97, 0.11);
+
+$caret-width:                 0.375rem;
+$caret-vertical-align:        $caret-width * .05;
+$caret-spacing:               $caret-width * 1.95;
+
+$input-btn-padding-y:         .875rem;
+$input-btn-padding-x:         2.1875rem;
+
+$input-btn-padding-y-sm:      .75rem;
+$input-btn-padding-x-sm:      2.5rem;
+$input-btn-font-size-sm:      1rem;
+$input-btn-line-height-sm:    1.2;
+
+$link-decoration:                   underline;
+$link-hover-color:                  $blue-base;
+$link-hover-decoration:             underline;
+
+$card-spacer-y:                     1.9375rem;
+$card-spacer-x:                     1.9375rem;
+$card-border-width:                 0;
+$card-border-radius:                5px;
+$card-border-color:                 transparent;
+
+$list-group-border-color:           $cyan-3;
+
+$list-group-border-radius:          0;
+$list-group-item-padding-y:         .9375rem;
+$list-group-item-padding-x:         2.5rem;
+
+$navbar-padding-y:                  1rem;
+$navbar-padding-x:                  0;
+
+$dropdown-min-width:                15.9375rem;
+$dropdown-padding-y:                5px;
+$dropdown-border-color:             transparent;
+$dropdown-border-width:             0;
+$dropdown-divider-bg:               $cyan-3;
+$dropdown-divider-margin-y:         0;
+
+$dropdown-link-color:               $body-color;
+$dropdown-link-hover-color:         rgba($color: $body-color, $alpha: .7);
+$dropdown-link-hover-bg:            $white;
+$dropdown-link-active-color:        $dropdown-link-hover-color;
+$dropdown-link-active-bg:           $dropdown-link-hover-bg;
+
+$dropdown-item-padding-y:           1rem;
+
+$custom-switch-width:                           5.9rem;
+$custom-switch-indicator-border-radius:         1.875rem;
+$custom-switch-indicator-size:                  1.5625rem;
+
+$custom-select-padding-x:           2rem;
+$custom-select-bg-size:             10px 13px;
+$custom-select-indicator-color:     $blue-base;
+$custom-select-indicator:           url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='14' viewBox='0 0 10 14'><path fill='#{$custom-select-indicator-color}' fill-opacity='0.8' d='M5.22196 0.485352L9.20136 5.99155H1.24257L5.22196 0.485352Z'/><path fill='#{$custom-select-indicator-color}' fill-opacity='0.8' d='M5.22237 13.1074L1.24298 7.60123L9.20177 7.60123L5.22237 13.1074Z'/></svg>");
+$custom-select-border-radius:       1.875rem;
+$custom-select-box-shadow:          0px 10px 25px rgba(28, 55, 97, 0.11);
+
+$modal-xl:                          1140px;
+$modal-lg:                          800px;
+$modal-md:                          600px;
+$modal-sm:                          350px;
+
+$modal-inner-padding:               1.875rem;
+
+$modal-backdrop-bg:                 $blue-box-shadow;
+$modal-backdrop-opacity:            .1;
+$modal-content-border-color:        transparent;
+$modal-content-border-width:        0;
+
+$hr-border-color:                   $cyan-3;
+
+$badge-font-size:                   1rem;
+$badge-font-weight:                 400;
+$badge-padding-x:                   18px;
+//$badge-border-radius:               30px;
+$badge-pill-padding-x:              18px;
+$badge-pill-border-radius:          30px;
+
+$breadcrumb-padding-y:              0;
+$breadcrumb-padding-x:              0;
+$breadcrumb-item-padding:           1rem;
+
+$breadcrumb-margin-bottom:          0;
+
+$breadcrumb-bg:                     transparent;
+$breadcrumb-divider-color:          $blue-base;
+$breadcrumb-active-color:           $blue-base;
+$breadcrumb-divider:                url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.9238 5.79883L1.59049 5.79883" stroke="#{$breadcrumb-divider-color}" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.25781 10.7051L1.59115 5.79984L6.25781 0.894598" stroke="#{$breadcrumb-divider-color}" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+
+$nav-tabs-border-color:             $cyan-4;
+$nav-tabs-border-width:             4px;
+$nav-tabs-border-radius:            0;
+$nav-tabs-link-hover-border-color:  transparent;
+$nav-tabs-link-active-color:        $blue-base;
+$nav-tabs-link-active-bg:           transparent;
+$nav-tabs-link-active-border-color: transparent;
+
+/* Bootstrap-select vars */
+
+$color-red-error: $red;
+$color-green-success: $green;
+$color-grey-arrow: $blue-base;
+
+$width-default: 17.75rem;
+
+$input-color-placeholder: rgba($color: $blue-base, $alpha: .8);
+$input-alt-color-placeholder: rgba($color: $blue-base, $alpha: .8);
+
+$input-padding-y-sm: .75rem;
+$input-padding-x-sm: 2.5rem;
+
+$input-padding-y-lg: .875rem;
+$input-padding-x-lg: 2.1875rem;

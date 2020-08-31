@@ -1,0 +1,103 @@
+extends pug/base-auth
+
+append vars
+	- html.classList.push('page-registration')
+
+block content
+	section.pt-60.pt-sm-80.pt-md-65.pt-lg-80.pt-xl-100.pb-55.pb-sm-60.pb-md-45.pb-xl-7
+		.container.text-center
+			.row.justify-content-center
+				.col-lg-8.col-sm-10
+					.card.card-form
+						.sheets-2
+							+svg("sheets-2")(width="193" height="195")
+						.card-header.text-left
+							a.card-back(href="#")
+								+svg("arrow-left-long")(width="49" height="18")
+							h4.card-title.m-0.ml-30 Авторизация
+						.card-body
+							.row.justify-content-center
+								.col-xl-10
+									form.form.needs-validation(novalidate)
+										.form-group.row.is-invalid
+											label.col-md-4.col-form-label E-mail
+											.col-md-8
+												input.form-control(type="email" placeholder="Введите e-mail")
+												.invalid-feedback Пользователь заблокирован. Вы можете узнать подробности у администратора.
+										.form-group.row.is-valid
+											label.col-md-4.col-form-label Пароль
+											.col-md-8
+												input.form-control(type="text" placeholder="")
+												.invalid-feedback Необходимо заполнить Пароль.
+										.form-group.row
+											label.col-md-4.col-form-label
+											.col-md-8
+												.custom-control.custom-checkbox.align-items-center.text-left
+													input.custom-control-input#invalidCheck(type="checkbox" value="" required checked)
+													label.custom-control-label.mt-2(for="invalidCheck") Запомнить меня
+										.form-group.row.mt-0
+											label.col-md-4.col-form-label
+											.col-md-8
+												button.btn.btn-danger.w-100.mt-10(type="submit") Войти
+								.link
+									a(href="#") Регистрация 
+									span /
+									a(href="#") Забыли пароль?  
+									span /
+									a(href="#") Повторно отправить подтверждение по e-mail
+								a.help-link(href="#" data-toggle="modal" data-target="#supportModal")
+									svg(width="23" height="23" viewBox="0 0 23 23" fill="transparent" xmlns="http://www.w3.org/2000/svg")
+										path(d="M11.9492 21.7402C17.4721 21.7402 21.9492 17.2631 21.9492 11.7402C21.9492 6.21739 17.4721 1.74023 11.9492 1.74023C6.42637 1.74023 1.94922 6.21739 1.94922 11.7402C1.94922 17.2631 6.42637 21.7402 11.9492 21.7402Z" stroke="#0AC789" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+										path(d="M9.03906 8.7408C9.27417 8.07247 9.73821 7.50891 10.349 7.14994C10.9598 6.79096 11.678 6.65974 12.3762 6.77952C13.0745 6.89929 13.7079 7.26233 14.1641 7.80433C14.6204 8.34634 14.8701 9.03233 14.8691 9.7408C14.8691 11.7408 11.8691 12.7408 11.8691 12.7408" stroke="#0AC789" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+										path(d="M11.9492 16.7402H11.9592" stroke="#0AC789" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+									| Возникли вопросы?
+
+		.modal.fade#supportModal(tabindex="-1" role="dialog" aria-labelledby="supportModalLabel" aria-hidden="true")
+			.modal-dialog
+				.modal-content
+					.modal-header.justify-content-center
+						h5.m-0 Отправить запрос в службу поддержки
+						button.close(type="button" data-dismiss="modal" aria-label="Close")
+							span(aria-hidden="true") &times;
+					.modal-body
+						.row.justify-content-center
+							.col-xl-10
+								form.form.needs-validation(novalidate)
+									.form-group.row
+										label.col-md-3.col-form-label ФИО
+										.col-md-9
+											input.form-control(type="text" placeholder="Введите Ваше имя")
+											.invalid-feedback 
+									.form-group.row
+										label.col-md-3.col-form-label E-mail
+										.col-md-9
+											input.form-control(type="email" placeholder="Введите e-mail для ответа")
+											.invalid-feedback 
+									.form-group.row
+										label.col-md-3.col-form-label Текст
+										.col-md-9
+											textarea.form-control( placeholder="Введите текст запроса")
+											.invalid-feedback
+									.form-group.row
+										.col-md-12
+											p.mb-0.text-center *Ваш запрос будет отправлен администратору сайта.
+					.modal-footer
+						.row.justify-content-center
+							.col-xl-10
+								.row.align-items-center
+									.col-md-9.order-sm-1
+										button.btn.btn-primary.btn-sm.text-uppercase.w-100(data-dismiss="modal" data-toggle="modal" data-target="#supportSuccessModal") Отправить
+									.col-md-3.order-sm-0
+										a.btn.btn-link.btn-sm.text-danger.p-0(data-dismiss="modal") Закрыть
+
+		.modal.fade#supportSuccessModal(tabindex="-1" role="dialog" aria-labelledby="supportSuccessModalLabel" aria-hidden="true")
+			.modal-dialog
+				.modal-content
+					.modal-header.justify-content-center
+						h5.m-0 Запрос от пользователя: Иван
+						button.close(type="button" data-dismiss="modal" aria-label="Close")
+							span(aria-hidden="true") &times;
+					.modal-footer
+						.row.justify-content-center
+							.col-12.text-center
+								span.text-success Запрос успешно отправлен!

@@ -1,0 +1,248 @@
+extends pug/base-lk
+
+append vars
+	- html.classList.push('page-lk')
+
+block content
+
+	section
+		.container
+			nav(aria-label="breadcrumb")
+				ol.breadcrumb
+					li.breadcrumb-item
+						a(href="/lk-personal-account.html")
+							+svg("user")(width="27" height="27")
+							| Мой профиль
+					li.breadcrumb-item
+						a(href="/lk-main-user.html") Пользователи
+					li.breadcrumb-item(aria-current="page") Добавить  индивидуального предпринимателя
+	
+	section.pt-20.pt-xl-0
+		.container
+			.row
+				.col-lg-4.col-sm-12
+					.card.user-nav.mb-30
+						.card-body.pt-20.pr-10.pb-20.pl-10.pt-xl-25.pr-xl-30.pb-xl-15.pl-xl-30
+							ul.nav.flex-column
+								li.nav-item.mb-10
+									a.nav-link(href="/lk-personal-account.html") Мой профиль
+								li.nav-item.mb-10
+									a.nav-link.active(href="/lk-main-user.html") Пользователи
+								li.nav-item
+									a.nav-link(href="/lk-collateral-objects.html") Объекты залога
+								li.nav-item
+									a.nav-link(href="/lk-notifications.html") Уведомления 
+										span.badge.badge-pill.badge-danger 3
+								li.nav-item
+									a.nav-link(href="/lk-my-offers.html") Мои оферты
+								li.nav-item
+									a.nav-link(href="/lk-participation-in-offers.html") Участие в офертах
+										span.badge.badge-pill.badge-danger 1
+								li.nav-item
+									a.nav-link(href="/lk-counter-offers.html") Встречные предложения
+										span.badge.badge-pill.badge-danger 1
+								li.nav-item
+									a.nav-link(href="/lk-search-ads.html") Поиск объявлений
+						ul.list-group
+							li.list-group-item.border-right-0.border-left-0.pt-25.pb-30
+								a.btn.btn-secondary.w-100(href="/lk-personal-account-edit.html")
+									+svg("settings")(width="21" height="21")
+									| Настройки
+											
+				.col-lg-8.col-sm-12
+					.card.user-profile.user-profile-add
+						.card-header
+							h3.card-title.m-0 Добавить: Индивидуального предпринимателя
+						.card-body
+							form.form.needs-validation(novalidate)
+								.form-group.row.align-items-center.mb-30(data-toggle="collapse" data-target="#objectMore-1" role="button" aria-expanded="true" aria-controls="objectMore-1")
+									.col-xl-8.col-md-10.col-11.pr-0
+										h5.m-0 Основная информация
+									.col-1.text-right.pl-0
+										a.more
+											+svg("chevron-down")
+
+								.collapse.show.mb-45#objectMore-1
+									.form-group.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Наименование ИП, ИНН или адрес*
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control(type="text" placeholder="Начните вводить..." value="" required)
+									.form-group.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Фамилия*
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control(type="text" placeholder="Заполняется автоматич..." value="" required disabled)
+									.form-group.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Имя*
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control(type="text" placeholder="Заполняется автоматич..." value="" required disabled)
+									.form-group.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Отчество*
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control(type="text" placeholder="Заполняется автоматич..." value="" required disabled)
+									.form-group.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 ИНН*
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control(type="tel" placeholder="Заполняется автоматич..." value="" required disabled)
+									.form-group.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 ОГРНИП*
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control(type="tel" placeholder="Заполняется автоматич..." value="" required disabled)
+									.form-group.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Выбор адрес регистрации ИП*
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											select.selectpicker(placeholder="Выбрать...")
+												option(selected) Выбрать...
+												option Выбрать...
+									.form-group.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Дата регистрации ИП*
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control(type="text" placeholder="Заполняется автоматич..." value="" required)
+									.form-group.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Свидетельство о регистрации
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control(type="text" placeholder="Заполняется автоматич..." value="" disabled)
+									.form-group.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Деятельность ведется с печатью
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											select.selectpicker(placeholder="Выбрать...")
+												option(selected) Выбрать...
+												option Выбрать...
+
+								.form-group.row.align-items-center.mb-30(data-toggle="collapse" data-target="#objectMore-8" role="button" aria-expanded="true" aria-controls="objectMore-8")
+									.col-xl-8.col-md-10.col-11.pr-0
+										h5.m-0 Банковские реквизиты
+									.col-1.text-right.pl-0
+										a.more
+											+svg("chevron-down")
+
+								.collapse.show.mb-50#objectMore-8
+									.form-group.row.align-items-start
+										label.col-sm-4.col-form-label.pt-sm-0.pb-sm-0 Название банка
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control(type="text" placeholder="Ввести текст " value="")
+											small БИК или SWIFT 
+									.form-group.row.align-items-start
+										label.col-sm-4.col-form-label.pt-sm-0.pb-sm-0 Номер счета
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control(type="text" placeholder="Ввести текст " value="")
+									.form-group.row.align-items-start
+										label.col-sm-4.col-form-label.pt-sm-0.pb-sm-0 Корреспондентский счет 
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control(type="text" placeholder="Ввести текст " value="")
+									.form-group.row.align-items-start
+										label.col-sm-4.col-form-label.pt-sm-0.pb-sm-0 Наименование банка 
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control(type="text" placeholder="Ввести текст " value="")
+
+								.form-group.row.align-items-center.mb-30(data-toggle="collapse" data-target="#objectMore-7" role="button" aria-expanded="true" aria-controls="objectMore-7")
+									.col-xl-8.col-md-10.col-11.pr-0
+										h5.m-0 Гарантии и заверения
+									.col-1.text-right.pl-0
+										a.more
+											+svg("chevron-down")
+
+								.collapse.show.mb-45#objectMore-7
+									.form-group.row.align-items-start
+										label.col-sm-4.col-form-label.pt-sm-0.pb-sm-0 Наличие неисполненных обязательств перед кредиторами
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											select.selectpicker(placeholder="Выбрать...")
+												option(selected) Выбрать...
+												option Выбрать...
+									.form-group.row.align-items-start
+										label.col-sm-4.col-form-label.pt-sm-0.pb-sm-0 Пояснение
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											textarea.form-control(name="" placeholder="Ввести текст")
+											small пояснение по неиспоненным обяз...
+									.form-group.row.align-items-start
+										label.col-sm-4.col-form-label.pt-sm-0.pb-sm-0 Наличие судебных производств
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											select.selectpicker(placeholder="Выбрать...")
+												option(selected) Выбрать...
+												option Выбрать...
+									.form-group.row.align-items-start
+										label.col-sm-4.col-form-label.pt-sm-0.pb-sm-0 Непогашенная судимость
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											select.selectpicker(placeholder="Выбрать...")
+												option(selected) Выбрать...
+												option Выбрать...
+									.form-group.row.align-items-start
+										label.col-sm-4.col-form-label.pt-sm-0.pb-sm-0 Наличие открытых исполнительных производств
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											select.selectpicker(placeholder="Выбрать...")
+												option(selected) Выбрать...
+												option Выбрать...
+									.form-group.row.align-items-start
+										label.col-sm-4.col-form-label.pt-sm-0.pb-sm-0 Ограничение дееспособности
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											select.selectpicker(placeholder="Выбрать...")
+												option(selected) Выбрать...
+												option Выбрать...
+												
+								.form-group.row.align-items-center.mb-30(data-toggle="collapse" data-target="#objectMore-4" role="button" aria-expanded="true" aria-controls="objectMore-4")
+									.col-xl-8.col-md-10.col-11.pr-0
+										h5.m-0 Дополнительная информация
+									.col-1.text-right.pl-0
+										a.more
+											+svg("chevron-down")
+
+								.collapse.show.mb-45#objectMore-4
+									.form-group.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Телефон*
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control.phone-mask(type="tel" placeholder="+7(___) ___ __ __" value="+7 (981) 536 56 56" required)
+									.form-group.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Email*
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control(type="email" placeholder="Введите e-mail" value="user@examole.com" required)
+											.invalid-feedback Необходимо заполнить Email.
+									.form-group.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Интернет-сайт
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control(type="text" placeholder="Ввести текст " value="")
+
+								.form-group.row.align-items-center.mb-30(data-toggle="collapse" data-target="#objectMore-5" role="button" aria-expanded="true" aria-controls="objectMore-5")
+									.col-xl-8.col-md-10.col-11.pr-0
+										h5.m-0 Основание представления интересов
+									.col-1.text-right.pl-0
+										a.more
+											+svg("chevron-down")
+
+								.collapse.show.mb-45#objectMore-5
+									.form-group.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Фамилия*
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control(type="text" placeholder="Введите фамилию" value="Иванов" required)
+											.invalid-feedback Необходимо указать Вашу фамилию
+									.form-group.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Имя*
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control(type="text" placeholder="Введите имя" value="Иван" required)
+											.invalid-feedback Необходимо указать Ваше имя
+									.form-group.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Отчество*
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control(type="text" placeholder="Отчество" value="Иванович" required)
+											.invalid-feedback Необходимо указать Ваше отчество
+									.form-group.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Наименование документа (нотариальная доверенность)
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control(type="text" placeholder="Ввести текст " value="")
+									.form-group.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Дата документа*
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control.datepicker(type="" placeholder="Выбрать дату" required)
+									.form-group.row.align-items-start
+										label.col-sm-4.col-form-label.font-weight-bolder.pt-sm-0.pb-sm-0 Номер документа
+										.col-xl-5.col-md-7.col-sm-8.pr-md-0.pl-xl-0.pr-xl-10
+											input.form-control(type="text" placeholder="Ввести текст " value="")
+											small Числа и буквы
+
+								.form-group
+									.text-success.text-center.d-flex.align-items-center
+										+svg("check-green").mr-10(width="16" height="13")
+										span Индивидуальный предприниматель  является основным физическим лицом
+
+								.form-group.row.align-items-start.mt-40.justify-content-center
+									.col-sm-5.mt-15.mt-sm-0.pr-sm-0
+										button.btn.btn-primary.w-100.text-uppercase(type="submit") Сохранить
+

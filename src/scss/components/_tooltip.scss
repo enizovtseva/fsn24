@@ -1,0 +1,33 @@
+.tooltip {
+  // bs-tooltip-bottom 
+  &.show { opacity: 1; }
+  .arrow {
+    &:before {
+      border-bottom-color: $gray-100;
+      box-shadow: 0px 10px 25px rgba(28, 55, 97, 0.11);
+    }
+  }
+  &-inner {
+    max-width: 370px;
+    padding: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.03em;
+
+    color: $blue-base;
+
+    background: $gray-100;
+    box-shadow: 0px 10px 25px rgba(28, 55, 97, 0.11);
+    overflow: hidden;
+  }
+
+  .alert-circle {
+    width: 18px; height: 18px;
+    margin-right: 10px;
+    background-image: url(../images/sprites/svg/alert-circle.svg);
+  }
+}

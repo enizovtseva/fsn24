@@ -1,0 +1,32 @@
+.pagination {
+	padding: 30px 0;
+	margin: 10px 0;
+	line-height: 1.2;
+	text-align: center;
+	
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		li {
+			a, span {
+				color: $black;
+			}
+		}
+	}
+
+	&__prev, &__next {
+
+		&.is-disabled {
+			color: #dedede;
+			cursor: default;
+		}
+	}
+
+	&__prev {
+	}
+
+	&__next {
+	}
+}

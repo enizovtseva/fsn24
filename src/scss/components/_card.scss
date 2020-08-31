@@ -1,0 +1,10 @@
+.card {
+  box-shadow: 0px 10px 25px $color-box-shadow;
+  &-header {
+    display: flex;
+    align-items: center;
+    background-color: $white;
+    border-bottom: 1px solid $cyan-4;
+  }
+  &-back {}
+}

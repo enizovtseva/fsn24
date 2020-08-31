@@ -1,0 +1,89 @@
+extends pug/base-lk
+
+append vars
+	- html.classList.push('page-lk')
+
+block content
+
+	section
+		.container
+			nav(aria-label="breadcrumb")
+				ol.breadcrumb
+					li.breadcrumb-item(aria-current="page")
+						+svg("user")(width="27" height="27")
+						| Мой профиль
+					li.breadcrumb-item(aria-current="page") Лицевой счет
+					li.breadcrumb-item(aria-current="page") История операций
+					
+	section.pt-20.pt-xl-0
+		.container
+
+			h1.text-center Полный доступ ко всем возможностям портала
+
+			.purchase-status.mb-90
+				.row.align-items-center
+					.col-md-6
+						.h4.m-0 Привлеките внимание!
+					.col-md-6.text-md-center
+						span.badge.badge-danger.mr-10
+						span 178 пользователь приобрели доступ сегодня
+				.row.align-items-stretch.mt-10
+					.col-md-6.mt-30
+						.card
+							.card-body.text-center
+								.badge.badge-success.text-uppercase.mb-30
+									span Старт
+								h4 Бесплатно
+								ul.text-left
+									li Стартуй и участвуй как физическое лицо или индивидуальный предприниматель. 
+									li Сумма займа (заявки) до 1 млн. руб. 
+									li Публикация оферт в качестве заемщика.
+								a.btn.btn-primary.mt-40(href="#") Попробовать
+					.col-md-6.mt-30
+						.card
+							.card-body.text-center
+								.badge.badge-cyan.text-uppercase.mb-30
+									span стандарт
+								h4 2 456 руб.
+								ul.text-left
+									li Публикация оферт в качестве заемщика и инвестора
+									li Публикация оферт от 1 до 3 млн. руб. 
+									li Позволяет учавствовать до 3 млн. руб. 
+								a.btn.btn-info.text-uppercase.mt-40(href="#") Купить
+					.col-md-6.mt-30
+						.card
+							.card-body.text-center
+								.badge.badge-indigo.text-uppercase.mb-30
+									span Бизнес
+								h4 4 890 руб.
+								ul.text-left
+									li Публикация оферт в качестве заемщика и инвестора
+									li Публикация оферт от 3 до 7 млн. руб.
+									li Позволяет учавствовать до 7 млн. руб. 
+								a.btn.btn-info.text-uppercase.mt-40(href="#") Купить
+					.col-md-6.mt-30
+						.card
+							.card-body.text-center
+								.badge.badge-blue.text-uppercase.mb-30
+									span Профи
+								h4 8 730 руб.
+								ul.text-left
+									li Публикация оферт в качестве заемщика и инвестора
+									li Публикация оферт от 7 млн. руб.
+									li Позволяет учавствовать от 7 млн. руб. 
+								a.btn.btn-info.text-uppercase.mt-40.disabled(href="#" data-toggle="tooltip" data-placement="bottom" title='<div class="alert-circle"></div> Должна быть хотя бы 1 сделка') Купить
+
+			h4 Компании которые имеют свой статус, уже с нами:
+			.row.confidence-list.align-items-center.justify-content-between.text-center.mb-20
+				.col
+					+svg("loreal")(width="165" height="44")
+				.col
+					+svg("HM")(width="96" height="64")
+				.col
+					+svg("pwc")(width="106" height="81")
+				.col
+					+svg("nike")(width="120" height="63")
+				.col
+					+svg("T-Mobile")(width="181" height="32")
+				.col
+					+svg("Hilton")(width="95" height="72")

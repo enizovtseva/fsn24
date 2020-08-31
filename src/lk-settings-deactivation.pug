@@ -1,0 +1,143 @@
+extends pug/base-lk
+
+append vars
+	- html.classList.push('page-lk')
+
+block content
+
+	section
+		.container
+			nav(aria-label="breadcrumb")
+				ol.breadcrumb
+					li.breadcrumb-item
+						a(href="/lk-personal-account.html")
+							+svg("user")(width="27" height="27")
+							| Мой профиль
+					li.breadcrumb-item
+						a(href="/lk-settings-notifications.html") Настройки
+					li.breadcrumb-item.active(aria-current="page") Безопасность
+	
+	section.pt-20.pt-xl-0
+		.container
+			.row
+				.col-lg-4.col-sm-12
+					.row
+						.col-lg-12.col-md-6
+							.card.user-sidebar.mb-30
+								ul.list-group.text-center
+									li.list-group-item.pt-25.pb-30.border-right-0.border-left-0
+										a.text-blue(href="/lk-settings-notifications.html") Рассылки
+									li.list-group-item.pt-30.pb-35.border-right-0.border-left-0
+										a.text-success(href="/lk-settings-safety.html") Безопасность
+									li.list-group-item.pt-30.pb-25.border-right-0.border-left-0
+										a.text-danger(href="/lk-settings-deactivation.html") Деактивация аккаунта
+											
+						.col-lg-12.col-md-6
+							.card.user-nav.mb-30
+								.card-body.pt-20.pr-10.pb-20.pl-10.pt-xl-25.pr-xl-30.pb-xl-15.pl-xl-30
+									ul.nav.flex-column
+										li.nav-item.mb-10
+											a.nav-link(href="/lk-personal-account.html") Мой профиль
+										li.nav-item.mb-10
+											a.nav-link.active(href="/lk-main-user.html") Пользователи
+										li.nav-item
+											a.nav-link(href="/lk-collateral-objects.html") Объекты залога
+										li.nav-item
+											a.nav-link(href="/lk-notifications.html") Уведомления 
+												span.badge.badge-pill.badge-danger 3
+										li.nav-item
+											a.nav-link(href="/lk-my-offers.html") Мои оферты
+										li.nav-item
+											a.nav-link(href="/lk-participation-in-offers.html") Участие в офертах
+												span.badge.badge-pill.badge-danger 1
+										li.nav-item
+											a.nav-link(href="/lk-counter-offers.html") Встречные предложения
+												span.badge.badge-pill.badge-danger 1
+										li.nav-item
+											a.nav-link(href="/lk-search-ads.html") Поиск объявлений
+								ul.list-group
+									li.list-group-item.border-right-0.border-left-0.pt-25.pb-30
+										a.btn.btn-secondary.w-100(href="/lk-personal-account-edit.html")
+											+svg("settings")(width="21" height="21")
+											| Настройки
+											
+				.col-lg-8.col-sm-12
+					form.card.user-profile
+						.card-header
+							h3.card-title.m-0.text-center.w-100 Деактивация аккаунта
+						.card-body.text-center
+							.page-lk-deactivation
+								.page-lk-deactivation-container
+									p Деактивация Вашего аккаунта приведет к блокировке Вашего профиля на 30 дней, удалению фото и Вашего имени из материалов. Если аккаунт до  30 дней не будет восстановлен, Ваш аккаунт будет удален безвозвратно. 
+								.row.align-items-start.mt-40.justify-content-center
+									.col-sm-5.pl-sm-0
+										button.btn.btn-primary.w-100(type="submit") Назад
+									.col-sm-5.mt-15.mt-sm-0.pr-sm-0
+										button.btn.btn-danger.w-100(type="button" data-toggle="modal" data-target="#deactivationModal") Деактивировать
+
+					.modal.fade#deactivationModal(tabindex="-1" role="dialog" aria-labelledby="deactivationModal" aria-hidden="true")
+						.modal-dialog
+							.modal-content
+								.modal-header.justify-content-center
+									h5.m-0 Вы уверены, что хотите деактивировать свой аккаунт?
+									button.close(type="button" data-dismiss="modal" aria-label="Close")
+										span(aria-hidden="true") &times;
+								.modal-body.pt-50.pb-50.text-center
+									p.mb-0 В целях безопасности будет отправлено SMS-сообщение с 6-значным кодом на ваш номер телефона, который Вы указывали при регистрации аккаунта «ФСН24»
+								.modal-footer.justify-content-center
+									.col-sm-6.m-0
+										button.btn.btn-primary.btn-sm.w-100.text-uppercase(type="button" data-dismiss="modal" data-toggle="modal" data-target="#SMSconfirmationModal") Ок
+
+					.modal.fade#SMSconfirmationModal(tabindex="-1" role="dialog" aria-labelledby="SMSconfirmationModal" aria-hidden="true")
+						.modal-dialog
+							.modal-content
+								.modal-header.justify-content-center
+									h5.m-0 SMS код подтверждения
+									button.close(type="button" data-dismiss="modal" aria-label="Close")
+										span(aria-hidden="true") &times;
+								.modal-body.pt-50.pb-50.text-center
+									form.form.needs-validation(novalidate)
+										.form-group.row.align-items-stretch.justify-content-center
+											label.col-lg-5.col-sm-4.col-12.col-form-label.text-right Введите код подтверждения
+											.col-lg-5.col-sm-8.col-12.is-invalid
+												input.form-control(type="tel" placeholder="" value="")
+												.invalid-feedback Неверный код из SMS
+								.modal-footer
+										button.btn.btn-link.btn-sm.w-100.text-decoration-none.text-danger(type="button" data-dismiss="modal") Назад
+										button.btn.btn-primary.btn-sm.w-100.text-uppercase(type="button" data-dismiss="modal" data-toggle="modal" data-target="#deactivationDoneModal") Подтвердить
+								.modal-footer
+										button.btn.btn-link.btn-sm.w-100.text-decoration-none.text-danger(type="button" data-dismiss="modal") Назад
+										button.btn.btn-link.btn-sm.w-100(type="button" data-dismiss="modal") Выслать код повторно
+								.modal-footer
+										button.btn.btn-link.btn-sm.w-100.text-decoration-none.text-danger(type="button" data-dismiss="modal") Назад
+										button.btn.btn-link.btn-sm.w-100(type="button" data-dismiss="modal") Выслать повторно код можно будет через 0:54
+
+					.modal.fade#deactivationDoneModal(tabindex="-1" role="dialog" aria-labelledby="deactivationDoneModal" aria-hidden="true")
+						.modal-dialog
+							.modal-content
+								.modal-header.justify-content-center
+									h5.m-0 Ваш аккаунт деактивирован
+									button.close(type="button" data-dismiss="modal" aria-label="Close")
+										span(aria-hidden="true") &times;
+								.modal-body.pt-50.pb-50.text-center
+									p Для восстановления аккаунта войдите, используя ваш прежний электронный адрес и пароль. Вы сможете пользоваться сайтом также, как и раньше.
+									p Надеемся, Вы скоро вернетесь.
+									form.form.needs-validation(novalidate)
+										.form-group.row.align-items-stretch.justify-content-center
+											label.col-lg-5.col-sm-4.col-12.col-form-label.text-right E-mail
+											.col-lg-6.col-sm-8.col-12
+												input.form-control(type="tel" placeholder="Введите e-mail" value="")
+										.form-group.row.align-items-stretch.justify-content-center
+											label.col-lg-5.col-sm-4.col-12.col-form-label.text-right Пароль
+											.col-lg-6.col-sm-8.col-12
+												input.form-control(type="password" placeholder="" value="")
+										.form-group.row.align-items-stretch.justify-content-center
+											.col-lg-5.col-sm-4.col-12
+											.col-lg-6.col-sm-8.col-12
+												button.btn.btn-danger.btn-sm.w-100.text-uppercase(type="button") Войти
+								.modal-footer.justify-content-center
+									.col-sm-6.m-0
+										button.btn.btn-primary.btn-sm.w-100.text-uppercase(type="button" data-dismiss="modal") Перейти на главную
+									.col-sm-6.m-0
+										button.btn.btn-ourline-success.btn-sm.w-100.text-uppercase(type="button" data-dismiss="modal") Создать аккаунт
+

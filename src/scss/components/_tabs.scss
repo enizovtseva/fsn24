@@ -1,0 +1,23 @@
+.nav-tabs {
+  .nav-item {
+    &:not(:last-child) { margin-right: 30px; }
+  }
+  .nav-link {
+    padding: 0 0 10px;
+    font-size: 25px;
+    line-height: 13px;
+    letter-spacing: 0.8px;
+    color: rgba(53, 103, 154, 0.3);
+    border: none;
+    border-bottom: 4px solid $cyan-4;
+    @media (max-width: 619px) {
+      font-size: 20px;
+    }
+
+    &.active {
+      color: $blue-base;
+      border-bottom: 4px solid #1BA2FA;
+    }
+  }
+}
+.tab-content { padding: 50px 0; }

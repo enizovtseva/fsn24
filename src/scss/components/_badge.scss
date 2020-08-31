@@ -1,0 +1,9 @@
+.badge {
+  line-height: 17px;
+  &.badge-lg {
+    line-height: 22px;
+  }
+  &.badge-primary {
+    color: $white;
+  }
+}
