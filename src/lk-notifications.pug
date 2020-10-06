@@ -9,10 +9,10 @@ block content
 		.container
 			nav(aria-label="breadcrumb")
 				ol.breadcrumb
-					li.breadcrumb-item.active(aria-current="page")
+					li.breadcrumb-item(aria-current="page")
 						+svg("user")(width="27" height="27")
 						| Мой профиль
-					li.breadcrumb-item.active(aria-current="page") Пользователи
+					li.breadcrumb-item.active(aria-current="page") Уведомления
 					
 	section.pt-20.pt-xl-0
 		.container
@@ -28,12 +28,12 @@ block content
 										li.nav-item.mb-10
 											a.nav-link(href="/lk-main-user.html") Пользователи
 										li.nav-item
-											a.nav-link.active(href="/lk-collateral-objects.html") Объекты залога
+											a.nav-link(href="/lk-collateral-objects.html") Объекты залога
 										li.nav-item
-											a.nav-link(href="/lk-notifications.html") Уведомления 
+											a.nav-link.active(href="/lk-notifications.html") Уведомления 
 												span.badge.badge-pill.badge-danger 3
 										li.nav-item
-											a.nav-link(href="/lk-my-offers.html") Мои оферты
+											a.nav-link(href="/lk-offers.html") Мои оферты
 										li.nav-item
 											a.nav-link(href="/lk-participation-in-offers.html") Участие в офертах
 												span.badge.badge-pill.badge-danger 1
